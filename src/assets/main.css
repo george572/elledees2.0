@@ -10,3 +10,7 @@
     font-family: Geomanist-Bold;
     src: url('./fonts/geomanist-bold-webfont.ttf');
   }
+@font-face {
+    font-family: Cardinal;
+    src: url('./fonts/VCCardinal-ExtraBold-Trial.otf');
+  }

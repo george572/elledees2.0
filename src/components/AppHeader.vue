@@ -36,7 +36,7 @@ const navigationLinks = [
 
 <template>
   <!-- Desktop Nav -->
-  <div class="hidden md:flex gap-5 items-center justify-center py-6 max-w-[1920px] mx-auto relative">
+  <div class="hidden md:flex gap-8 items-center justify-center py-6 mx-auto sticky top-0 z-40 bg-white">
     <a
       v-for="navLink in navigationLinks"
       :key="navLink.title"
