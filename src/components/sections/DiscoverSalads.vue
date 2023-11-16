@@ -12,9 +12,9 @@ const currentLanguage = ref(store.currentLanguage);
 <template>
   <div
     v-if="currentLanguage"
-    class="flex flex-col items-center justify-center pt-40 pb-28 gap-20"
+    class="flex flex-col items-center justify-center pt-24 md:pt-40 pb-20 md:pb-28 gap-10 md:gap-20"
   >
-    <h1 class="font-[Geomanist-Bold] text-[45px] text-ed-green text-center max-w-[1000px] mx-auto px-5">
+    <h1 class="font-[Geomanist-Bold] text-[35px] md:text-[45px] text-ed-green text-center max-w-[1000px] mx-auto px-5">
       {{ translations[currentLanguage].about.text }}
     </h1>
     <div class="flex flex-col md:flex-row justify-center items-center gap-5">
