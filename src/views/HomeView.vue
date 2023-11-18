@@ -2,6 +2,7 @@
 import HeroSection from '../components/sections/HeroSection.vue';
 import DiscoverSalads from '../components/sections/DiscoverSalads.vue';
 import GallerySection from '../components/sections/GallerySection.vue';
+import WorkScheduleSection from '../components/sections/WorkScheduleSection.vue';
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import GallerySection from '../components/sections/GallerySection.vue';
     <div class="min-h-[288px] parallax bg-ed-pink relative">
       <GallerySection />
     </div>
+    <WorkScheduleSection />
   </div>
 </template>
 

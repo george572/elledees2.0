@@ -9,6 +9,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "pinia": "^2.1.7",
     "primevue": "^3.40.1",
     "vue": "^3.3.4",
