@@ -10,6 +10,7 @@ export default {
         'ed-yellow' : "#F9E84F",
         'ed-pink' : "#ED9FC4",
         'ed-red' : "#E23734",
+        'ed-beige' : '#FBF4DC'
       }
     },
   },

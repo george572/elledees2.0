@@ -7,7 +7,7 @@ import AppButton from '../AppButton.vue';
     <img
       src="../../assets/images/kitchen.png"
     >
-    <div class="grid-bg  py-10 md:py-40 px-5">
+    <div class="grid-bg py-10 md:py-40 px-5">
       <div class="max-w-[300px] md:max-w-[640px] mx-auto flex flex-col items-start gap-10 relative">
         <img
           src="../../assets/images/pinkbrocolli.png"
@@ -16,7 +16,7 @@ import AppButton from '../AppButton.vue';
         >
         <img
           src="../../assets/images/strawberry.png"
-          class="hidden lg:block absolute bottom-[-250px] right-[-300px] w-[300px]"
+          class="hidden lg:block absolute bottom-[-250px] right-[-170px] z-50 w-[250px]"
           alt=""
         >
         <div class="flex items-center font-[Geomanist-Bold] text-[20px] md:text-[45px] text-ed-red uppercase justify-between w-full">
@@ -45,7 +45,7 @@ import AppButton from '../AppButton.vue';
             <h2>11:30 - 15:30</h2>
           </div>
         </div>
-        <AppButton :additional-styles="'w-[445px] border border-ed-green text-ed-green mt-5 mx-auto'">
+        <AppButton :additional-styles="'max-w-[445px] text-[12px] md:text-[18px] w-full border border-ed-green text-ed-green mt-5 mx-auto'">
           1 RUE BOURDALOUE 75009 PARIS
         </AppButton>
       </div>

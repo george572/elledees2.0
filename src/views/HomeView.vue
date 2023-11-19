@@ -1,8 +1,10 @@
 <script setup lang='ts'>
 import HeroSection from '../components/sections/HeroSection.vue';
 import DiscoverSalads from '../components/sections/DiscoverSalads.vue';
-import GallerySection from '../components/sections/GallerySection.vue';
+import SaladsListSection from '../components/sections/SaladsListSection.vue';
 import WorkScheduleSection from '../components/sections/WorkScheduleSection.vue';
+import SliderSection from '../components/sections/SliderSection.vue';
+import ContactUsSection from '../components/sections/ContactUsSection.vue';
 </script>
 
 <template>
@@ -17,9 +19,12 @@ import WorkScheduleSection from '../components/sections/WorkScheduleSection.vue'
     </div>
     <DiscoverSalads />
     <div class="min-h-[288px] parallax bg-ed-pink relative">
-      <GallerySection />
+      <SaladsListSection />
     </div>
     <WorkScheduleSection />
+    <SliderSection />
+    <div class="h-[288px] parallax bg-ed-pink relative" />
+    <ContactUsSection />
   </div>
 </template>
 
