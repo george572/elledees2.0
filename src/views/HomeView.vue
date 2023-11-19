@@ -5,6 +5,7 @@ import SaladsListSection from '../components/sections/SaladsListSection.vue';
 import WorkScheduleSection from '../components/sections/WorkScheduleSection.vue';
 import SliderSection from '../components/sections/SliderSection.vue';
 import ContactUsSection from '../components/sections/ContactUsSection.vue';
+import AppFooter from '../components/AppFooter.vue';
 </script>
 
 <template>
@@ -25,6 +26,7 @@ import ContactUsSection from '../components/sections/ContactUsSection.vue';
     <SliderSection />
     <div class="h-[288px] parallax bg-ed-pink relative" />
     <ContactUsSection />
+    <AppFooter />
   </div>
 </template>
 
