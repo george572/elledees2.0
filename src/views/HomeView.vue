@@ -6,12 +6,16 @@ import WorkScheduleSection from '../components/sections/WorkScheduleSection.vue'
 import SliderSection from '../components/sections/SliderSection.vue';
 import ContactUsSection from '../components/sections/ContactUsSection.vue';
 import AppFooter from '../components/AppFooter.vue';
+
 </script>
 
 <template>
-  <div class="h-[6000px]">
+  <div>
     <HeroSection />
-    <div class="h-[288px] parallax bg-ed-pink relative">
+    <div
+      ref="parallaxImage"
+      class="h-[288px] parallax bg-ed-pink relative"
+    >
       <img
         src="./../assets/images/brocolli.png"
         alt=""

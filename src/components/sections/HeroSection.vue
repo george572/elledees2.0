@@ -1,17 +1,27 @@
 <script setup>
 import AppButton from '../AppButton.vue';
 import { useStore } from '../../stores';
-import { inject, ref } from 'vue';
+import { inject, ref, computed } from 'vue';
 
 const translations = inject('translations');
 const store = useStore();
 const currentLanguage = ref(store.currentLanguage);
+
+const images = inject('images');
+// aranair variantshi ar aketebs normalurad hero bg suratis loads. mainc tavidan tvirtavs.
 </script>
 
 <template>
-  <div class="hero-section-wrapper w-full h-screen relative">
-    <div class="absolute top-0 left-0 bg-black w-full h-full opacity-20" />
-    <div class="relative z-10 flex flex-col items-center justify-center gap-5 h-full px-5">
+  <div
+    class="relative w-full h-screen"
+  >
+    <img
+      :src="images.heroImg.image"
+      class="absolute object-cover w-full h-full"
+      alt=""
+    >
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20" />
+    <div class="relative z-10 flex flex-col items-center justify-center h-full gap-5 px-5">
       <h1 class="text-[60px] text-center xl:text-left md:text-[130px] xl:text-[130px] mx-auto font-[Cardinal] text-white leading-[50px] md:leading-[110px] xl:leading-[110px] uppercase max-w-[980px] mb-[80px]">
         {{ translations[currentLanguage].hero.title }}
       </h1>
@@ -21,13 +31,3 @@ const currentLanguage = ref(store.currentLanguage);
     </div>
   </div>
 </template>
-
-<style scoped>
-
-.hero-section-wrapper {
-    background-image: url("../../assets/images/hero-img.png");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-</style>

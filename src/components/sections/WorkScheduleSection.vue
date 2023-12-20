@@ -1,13 +1,18 @@
-<script setup lang='ts'>
+<script setup>
+import { inject} from 'vue';
+
 import AppButton from '../AppButton.vue';
+
+const images = inject('images');
 </script>
 
 <template>
   <div>
     <img
-      src="../../assets/images/kitchen.png"
+      :src="images.kitchenImg.image"
+      class="w-full"
     >
-    <div class="grid-bg py-10 md:py-40 px-5">
+    <div class="px-5 py-10 grid-bg md:py-40">
       <div class="max-w-[300px] md:max-w-[640px] mx-auto flex flex-col items-start gap-10 relative">
         <img
           src="../../assets/images/pinkbrocolli.png"

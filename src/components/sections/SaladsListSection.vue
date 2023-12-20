@@ -1,35 +1,15 @@
-<script setup lang='ts'>
-import { ref } from "vue";
-import amoremioImg from "../../assets/images/amoremio.png";
-import avecesarImg from "../../assets/images/avecesar.png";
-import bigcrispyImg from "../../assets/images/bigcrispy.png";
-import bufallobillImg from "../../assets/images/bufallobill.png";
-import frenchrivImg from "../../assets/images/frenchriv.png";
-import habibiImg from "../../assets/images/habibi.png";
-import mexicandreamImg from "../../assets/images/mexicandream.png";
-import supersourImg from "../../assets/images/supersour.png";
-import veggiemadnessImg from "../../assets/images/veggiemadness.png";
-import wildstrawberryImg from "../../assets/images/wildstrawberry.png";
+<script setup>
+import { ref, inject } from "vue";
 import SaladHover from "../SaladHover.vue";
 import AppButton from "../AppButton.vue";
 
-const amoremio = amoremioImg;
-const avecesar = avecesarImg;
-const bigcrispy = bigcrispyImg;
-const bufallobill = bufallobillImg;
-const frenchriv = frenchrivImg;
-const habibi = habibiImg;
-const mexicandream = mexicandreamImg;
-const supersour = supersourImg;
-const veggiemadness = veggiemadnessImg;
-const wildstrawberry = wildstrawberryImg;
-
+const images = inject('images');
 const saladsData = ref([
   {
     name : "Amore Mio", 
     sauceName: "Sauce pesto",
     ingredients: "Penne, concombres, tomates cerises, féta, oignons rouges, olives noires, pignons, roquette, mesclun",
-    img: amoremio,
+    img: 'amoremioImg',
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red'
   },
@@ -37,7 +17,7 @@ const saladsData = ref([
     name: "Big Crispy",
     sauceName: "Sauce miel-moutarde",
     ingredients: "Quinoa, avocat, poitrine de poulet rôtie, tomates cerises, oignons frits, pousses d'épinards, batavia",
-    img: bigcrispy,
+    img: 'bigcrispyImg',
     showHover: false,
     customClass: 'bg-ed-pink text-ed-yellow'
 
@@ -46,7 +26,7 @@ const saladsData = ref([
     name: "French Riviera",
     sauceName: "Vinaigrette huile d'olive-citron",
     ingredients: "Saumon mi-cuit, riz, oeuf dur, mozzarella, tomates cerises, olives noires, cébettes, pignons, mesclun, batas",
-    img: frenchriv,
+    img: 'frenchrivImg',
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow'
 
@@ -55,7 +35,7 @@ const saladsData = ref([
     name: "Buffalo Bill",
     sauceName: "Sauce Ranch",
     ingredients: "Chips de bacon, œuf dur, bleu, tomates cerises, avocat, oignons rouges, pitas croustillantes, batavia",
-    img: bufallobill,
+    img: 'bufallobillImg',
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red'
 
@@ -64,7 +44,7 @@ const saladsData = ref([
     name: "Mexican Dream",
     sauceName: "Sauce coriandre-cumin",
     ingredients: "Poitrine de poulet rôtie, parmesan, avocat, chips de bacon, tomates cerises, pitas croustillantes, cébettes, batavia",
-    img: mexicandream,
+    img: 'mexicandreamImg',
     showHover: false,
     customClass: 'bg-ed-pink text-ed-yellow'
     
@@ -73,7 +53,7 @@ const saladsData = ref([
     name: "Habibi Yallah",
     sauceName: "Sauce curcuma-tahini",
     ingredients: "Patates douces rôties, féta, tomates cerises, boulgour, pois chiches, oignons rouges, concombres, pitas croustillantes, menthe, persil, mesclun, batavia",
-    img: habibi,
+    img: 'habibiImg',
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow'
   },
@@ -81,7 +61,7 @@ const saladsData = ref([
     name: "Wild Strawberry",
     sauceName: "Vinaigrette balsamique",
     ingredients: "Fraises, avocat, carottes râpées, concombre, parmesan, pitas croustillantes, mesclun, batavia",
-    img: wildstrawberry,
+    img: 'wildstrawberryImg',
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow'
 
@@ -90,7 +70,7 @@ const saladsData = ref([
     name: "Veggie Madness",
     sauceName: "Sauce Tamari",
     ingredients: "Tofu mariné rôti, concombre, carottes râpées, brocoli cru, chou rouge, oignons rouges, graines de sésame, mesclun, batavia",
-    img: veggiemadness,
+    img: 'veggiemadnessImg',
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red'
   },
@@ -98,7 +78,7 @@ const saladsData = ref([
     name: "Super Sour",
     sauceName: "Sauce miel-moutarde",
     ingredients: "Avocat, brocoli cru, carottes râpées, parmesan, canneberges séchées, pitas croustillantes, graines de tournesol, roquette, batavia",
-    img: supersour,
+    img: 'supersourImg',
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red'
   },
@@ -106,7 +86,7 @@ const saladsData = ref([
     name: "Ave Cesar",
     sauceName: "Sauce César",
     ingredients: "Poitrine de poulet rôtie, parmesan, avocat, chips de bacon, tomates cerises, pitas croustillantes, cébettes, batavia",
-    img: avecesar,
+    img: 'avecesarImg',
     showHover: false,
     customClass: 'bg-ed-pink text-ed-yellow'
   }
@@ -120,12 +100,12 @@ const saladsData = ref([
     <div
       v-for="salad in saladsData"
       :key="salad.name"
-      class="salad-item relative"
+      class="relative salad-item"
       @mouseenter="salad.showHover = true"
       @mouseleave="salad.showHover = false"
     >
       <img
-        :src="salad.img"
+        :src="images[salad.img].image"
         class="salad-img h-full lg:min-h-[581px] lg:max-h-[581px] object-cover w-full"
       >
       <Transition>

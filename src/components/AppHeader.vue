@@ -43,7 +43,7 @@ watch(openNav, () => {
 
 <template>
   <!-- Desktop Nav -->
-  <div class="hidden md:flex gap-8 items-center justify-center py-6 mx-auto sticky top-0 z-40 bg-white">
+  <div class="hidden md:flex gap-8 items-center justify-center py-6 mx-auto sticky top-0 z-40 bg-white h-[84px]">
     <a
       v-for="navLink in navigationLinks"
       :key="navLink.title"
@@ -67,13 +67,13 @@ watch(openNav, () => {
   </div>
 
   <!-- Mobile Nav -->
-  <div class="py-4 px-2 flex md:hidden justify-between items-center sticky top-0 z-50 bg-white">
+  <div class="sticky top-0 z-50 flex items-center justify-between px-2 py-4 bg-white md:hidden">
     <img
       src="./../assets/images/logo.svg"
       alt=""
       class="w-[150px] sm:w-[200px] lg:w-full"
     >
-    <div class="flex gap-1 items-center">
+    <div class="flex items-center gap-1">
       <AppLanguageSwitcher class="cursor-pointer lg:top-[31px] relative md:top-[27.1px] font-[Geomanist-Bold] text-ed-green text-[14px] lg:text-[19px]" />
       <BurgerMenuIcon @open-nav="(data) => openNav = data" />
     </div>
