@@ -137,6 +137,7 @@ const saladsData = ref([
 .salad-item {
   max-width: 44%;
   width: 100%;
+  image-orientation: none;
 }
 .salad-item:nth-child(2), 
 .salad-item:nth-child(3), 
@@ -145,6 +146,7 @@ const saladsData = ref([
 .salad-item:nth-child(9) {
     max-width: 55%;
     width: 100%;
+    image-orientation: none;
 }
 @media only screen and (max-width: 1024px) {
   .salad-item {
