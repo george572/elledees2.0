@@ -67,7 +67,7 @@ onBeforeMount(() => {
       console.log('loaded image:', imagesLoaded.value)
       loadedImages.value[image.tag] = image;
       if (imagesLoaded.value === imagesToLoad) {
-        // loading.value = false;
+        loading.value = false;
       }
     };
   });
