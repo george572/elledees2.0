@@ -7,38 +7,38 @@ onMounted(() => {
       gap: 0,
       type: 'carousel',
       animationDuration: 1400,
-      perView: 3,
+      perView: 1,
       autoplay: 4000,
     }).mount({});
 });
 </script>
 
 <template>
-  <div class="glide pb-20 relative max-w-full">
+  <div class="relative max-w-full pb-20 glide">
     <div
       class="glide__track"
       data-glide-el="track"
     >
       <ul class="glide__slides">
-        <li class="glide__slide min-w-[500px] lg:min-w-[600px]">
+        <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
             src="../../assets/images/s1.png"
             alt=""
-            class="h-[600px] object-cover min-w-[759px]"
+            class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
           >
         </li>
-        <li class="glide__slide min-w-[500px] lg:min-w-[600px]">
+        <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
             src="../../assets/images/s2.png"
             alt=""
-            class="h-[600px] object-cover min-w-[759px]"
+            class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px]"
           >
         </li>
-        <li class="glide__slide min-w-[500px] lg:min-w-[600px]">
+        <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
             src="../../assets/images/s3.png"
             alt=""
-            class="h-[600px] object-cover min-w-[759px]"
+            class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px]"
           >
         </li>
       </ul>

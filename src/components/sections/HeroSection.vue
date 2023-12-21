@@ -13,11 +13,11 @@ const images = inject('images');
 
 <template>
   <div
-    class="relative w-full h-screen"
+    class="relative w-full h-auto py-20 md:h-screen"
   >
     <img
       :src="images.heroImg.image"
-      class="absolute object-cover w-full h-full"
+      class="absolute top-0 object-cover w-full h-full"
       alt=""
     >
     <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20" />

@@ -27,11 +27,11 @@ const currentImage = ref();
 </script>
 
 <template>
-  <div class="absolute top-0 left-0 flex w-full h-[101vh] text-4xl bg-ed-pink flex-col justify-between py-[134px] items-center">
-    <h2 class="font-[Cardinal] text-[300px] uppercase tracking-tight text-ed-red">
+  <div class="absolute top-0 left-0 flex w-full h-[101vh] text-4xl bg-ed-pink flex-col justify-center gap-5 sm:gap-0 sm:justify-between py-[134px] items-center">
+    <h2 class="font-[Cardinal] text-[50px] sm:text-[100px] lg:text-[200px] xl:text-[300px] uppercase tracking-tight text-ed-red">
       Elle&Dee's
     </h2>
-    <div class="w-[300px] h-[300px] relative mt-20">
+    <div class="w-[200px] sm:w-[300px] h-[300px] relative mt-0 sm:mt-20">
       <TransitionGroup mode="out-in">
         <img
           v-if="currentImage === 'strawberry'"

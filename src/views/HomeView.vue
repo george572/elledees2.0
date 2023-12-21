@@ -14,7 +14,7 @@ import AppFooter from '../components/AppFooter.vue';
     <HeroSection />
     <div
       ref="parallaxImage"
-      class="h-[288px] parallax bg-ed-pink relative"
+      class="h-[188px] md:h-[288px] parallax bg-ed-pink relative"
     >
       <img
         src="./../assets/images/brocolli.png"
@@ -28,7 +28,7 @@ import AppFooter from '../components/AppFooter.vue';
     </div>
     <WorkScheduleSection />
     <SliderSection />
-    <div class="h-[288px] parallax bg-ed-pink relative" />
+    <div class="h-[188px] md:h-[288px] parallax bg-ed-pink relative" />
     <ContactUsSection />
     <AppFooter />
   </div>

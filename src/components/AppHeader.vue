@@ -63,7 +63,7 @@ watch(openNav, () => {
         {{ navLink.title }}
       </p>
     </a>
-    <AppLanguageSwitcher class="absolute right-[45px] z-50 cursor-pointer lg:top-[30px] md:top-[27.1px] font-[Geomanist-Bold] text-ed-green  text-[14px] lg:text-[19px]" />
+    <AppLanguageSwitcher class="absolute right-[45px] z-50 cursor-pointer lg:top-[30px] md:top-[32px] font-[Geomanist-Bold] text-ed-green  text-[14px] lg:text-[19px]" />
   </div>
 
   <!-- Mobile Nav -->
