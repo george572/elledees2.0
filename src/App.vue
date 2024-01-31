@@ -64,7 +64,6 @@ onBeforeMount(() => {
     img.src = image.image;
     img.onload = () => {
       imagesLoaded.value++;
-      console.log('loaded image:', imagesLoaded.value)
       loadedImages.value[image.tag] = image;
       if (imagesLoaded.value === imagesToLoad) {
         loading.value = false;
@@ -100,5 +99,11 @@ onBeforeMount(() => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+</style>
+
+<style>
+html {
+  scroll-behavior: smooth;
 }
 </style>

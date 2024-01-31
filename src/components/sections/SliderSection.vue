@@ -24,21 +24,21 @@ onMounted(() => {
           <img
             src="../../assets/images/s1.png"
             alt=""
-            class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
+            class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px] w-full"
           >
         </li>
         <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
             src="../../assets/images/s2.png"
             alt=""
-            class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px]"
+            class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px] w-full"
           >
         </li>
         <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
             src="../../assets/images/s3.png"
             alt=""
-            class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px]"
+            class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px] w-full"
           >
         </li>
       </ul>

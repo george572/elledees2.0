@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@glidejs/glide": "^3.6.0",
+    "@lucien144/vue3-parallaxy": "^0.1.1",
     "pinia": "^2.1.7",
     "primevue": "^3.40.1",
     "vue": "^3.3.4",

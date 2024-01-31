@@ -15,6 +15,7 @@ const images = inject('images');
     <div class="px-5 py-10 grid-bg md:py-40">
       <div class="max-w-[300px] md:max-w-[640px] mx-auto flex flex-col items-start gap-10 relative">
         <img
+          id="workScheduleSection"
           src="../../assets/images/pinkbrocolli.png"
           class="hidden lg:block absolute top-[-250px] left-[-300px] w-[300px]"
           alt=""

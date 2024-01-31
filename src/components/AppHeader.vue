@@ -1,5 +1,5 @@
 <script setup>
-import { inject, ref, watch } from 'vue';
+import { inject, ref, watch, computed } from 'vue';
 import { useStore } from '@/stores/index'
 import AppLanguageSwitcher from './AppLanguageSwitcher.vue'
 import BurgerMenuIcon from './BurgerMenuIcon.vue'
@@ -13,11 +13,11 @@ const openNav = ref(false);
 const navigationLinks = [
   {
     title: translations[currentLanguage.value].header.navigation.clickCollect,
-    href : "#!"
+    href : "#workScheduleSection"
   },
   {
     title: translations[currentLanguage.value].header.navigation.menu,
-    href : "#!"
+    href : "#saladsListSection"
   },
   {
     title: 'logo',
@@ -25,13 +25,17 @@ const navigationLinks = [
   },
   {
     title: translations[currentLanguage.value].header.navigation.hours,
-    href : "#!"
+    href : "#workScheduleSection"
   },
   {
     title: translations[currentLanguage.value].header.navigation.contact,
-    href : "#!"
+    href : "#contactUsSection"
   },
 ]
+
+const computedNavLinks = computed(() => {
+  return navigationLinks.filter((navLink) => navLink.title !== 'logo');
+})
 
 watch(openNav, () => {
   if (openNav.value) {
@@ -47,7 +51,7 @@ watch(openNav, () => {
     <a
       v-for="navLink in navigationLinks"
       :key="navLink.title"
-      href="#!"
+      :href="navLink.href"
       class="font-[Geomanist-Bold] uppercase text-ed-green align-middle text-[14px] lg:text-[19px] transition-all duration-50 active:text-ed-yellow"
     >
       <img
@@ -82,9 +86,9 @@ watch(openNav, () => {
       :class="{'w-[100%]' : openNav}"
     >
       <a
-        v-for="navLink in navigationLinks"
+        v-for="navLink in computedNavLinks"
         :key="navLink.title"
-        href="#!"
+        :href="navLink.href"
         class="font-[Geomanist-Bold] uppercase font-bol text-ed-yellow align-middle text-[30px] whitespace-nowrap active:text-white"
       >
         <p

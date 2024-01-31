@@ -96,7 +96,10 @@ const saladsData = ref([
 </script>
 
 <template>
-  <div class="salad-wrapper py-40 pb-[100px] sm:pb-[500px] flex flex-wrap flex-col gap-5 lg:gap-0 lg:flex-row items-center justify-center px-10 box-content">
+  <div
+    id="saladsListSection"
+    class="salad-wrapper py-10 sm:py-40 pb-[30px] sm:pb-[500px] flex flex-wrap flex-col gap-5 lg:gap-0 lg:flex-row items-center justify-center px-10 box-content"
+  >
     <div
       v-for="salad in saladsData"
       :key="salad.name"

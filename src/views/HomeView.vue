@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { computed } from 'vue';
 import HeroSection from '../components/sections/HeroSection.vue';
 import DiscoverSalads from '../components/sections/DiscoverSalads.vue';
 import SaladsListSection from '../components/sections/SaladsListSection.vue';
@@ -7,12 +8,15 @@ import SliderSection from '../components/sections/SliderSection.vue';
 import ContactUsSection from '../components/sections/ContactUsSection.vue';
 import AppFooter from '../components/AppFooter.vue';
 
+const isMobile = computed(() => window.innerWidth < 768);
+
 </script>
 
 <template>
   <div>
     <HeroSection />
     <div
+      v-if="!isMobile"
       ref="parallaxImage"
       class="h-[188px] md:h-[288px] parallax bg-ed-pink relative"
     >
@@ -28,7 +32,10 @@ import AppFooter from '../components/AppFooter.vue';
     </div>
     <WorkScheduleSection />
     <SliderSection />
-    <div class="h-[188px] md:h-[288px] parallax bg-ed-pink relative" />
+    <div
+      v-if="!isMobile"
+      class="h-[188px] md:h-[288px] parallax bg-ed-pink relative"
+    />
     <ContactUsSection />
     <AppFooter />
   </div>
