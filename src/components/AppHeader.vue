@@ -3,9 +3,12 @@ import { inject, ref, watch, computed } from 'vue';
 import { useStore } from '@/stores/index'
 import AppLanguageSwitcher from './AppLanguageSwitcher.vue'
 import BurgerMenuIcon from './BurgerMenuIcon.vue'
+import { useRouter, useRoute } from 'vue-router';
 
 
 const store = useStore();
+const router = useRouter();
+const currentRoute = useRoute();
 const translations = inject('translations');
 const currentLanguage = ref(store.currentLanguage);
 const openNav = ref(false);
@@ -13,29 +16,38 @@ const openNav = ref(false);
 const navigationLinks = [
   {
     title: translations[currentLanguage.value].header.navigation.clickCollect,
-    href : "#workScheduleSection"
+    to : "/click-and-collect",
   },
   {
     title: translations[currentLanguage.value].header.navigation.menu,
-    href : "#saladsListSection"
+    href : "#salads-list",
+    to: "/"
   },
   {
     title: 'logo',
-    href : "#!"
+    to: "/",
+    href: "#header"
   },
   {
     title: translations[currentLanguage.value].header.navigation.hours,
-    href : "#workScheduleSection"
+    href : "#schedule",
+    to: "/"
   },
   {
     title: translations[currentLanguage.value].header.navigation.contact,
-    href : "#contactUsSection"
+    href : "#contact",
+    to: "/"
   },
 ]
 
 const computedNavLinks = computed(() => {
   return navigationLinks.filter((navLink) => navLink.title !== 'logo');
 })
+
+const navigateTo = (route) => {
+  if (!route) return;
+  router.push(route);
+}
 
 watch(openNav, () => {
   if (openNav.value) {
@@ -47,12 +59,15 @@ watch(openNav, () => {
 
 <template>
   <!-- Desktop Nav -->
-  <div class="hidden md:flex gap-8 items-center justify-center py-6 mx-auto sticky top-0 z-40 bg-white h-[84px]">
+  <div
+    class="hidden md:flex gap-8 items-center justify-center py-6 mx-auto sticky top-0 z-40 bg-white h-[84px]"
+  >
     <a
       v-for="navLink in navigationLinks"
       :key="navLink.title"
       :href="navLink.href"
-      class="font-[Geomanist-Bold] uppercase text-ed-green align-middle text-[14px] lg:text-[19px] transition-all duration-50 active:text-ed-yellow"
+      class="cursor-pointer font-[Geomanist-Bold] uppercase text-ed-green align-middle text-[14px] lg:text-[19px] transition-all duration-50 active:text-ed-yellow"
+      @click="navigateTo(navLink.to)"
     >
       <img
         v-if="navLink.title === 'logo'"
@@ -90,6 +105,7 @@ watch(openNav, () => {
         :key="navLink.title"
         :href="navLink.href"
         class="font-[Geomanist-Bold] uppercase font-bol text-ed-yellow align-middle text-[30px] whitespace-nowrap active:text-white"
+        @click="navigateTo(navLink.to)"
       >
         <p
           class="transform translate-y-0.5"

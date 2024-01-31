@@ -13,6 +13,7 @@ const images = inject('images');
 
 <template>
   <div
+    id="header"
     class="relative w-full h-auto py-20 md:h-screen"
   >
     <img

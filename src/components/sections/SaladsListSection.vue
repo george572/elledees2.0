@@ -97,7 +97,7 @@ const saladsData = ref([
 
 <template>
   <div
-    id="saladsListSection"
+    id="salads-list"
     class="salad-wrapper py-10 sm:py-40 pb-[30px] sm:pb-[500px] flex flex-wrap flex-col gap-5 lg:gap-0 lg:flex-row items-center justify-center px-10 box-content"
   >
     <div
