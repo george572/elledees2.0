@@ -88,11 +88,16 @@ watch(openNav, () => {
 
   <!-- Mobile Nav -->
   <div class="sticky top-0 z-50 flex items-center justify-between px-2 py-4 bg-white md:hidden">
-    <img
-      src="./../assets/images/logo.svg"
-      alt=""
-      class="w-[150px] sm:w-[200px] lg:w-full"
+    <a
+      href="#header" 
+      @click="navigateTo('/')"
     >
+      <img
+        src="./../assets/images/logo.svg"
+        alt=""
+        class="w-[150px] sm:w-[200px] lg:w-full cursor-pointer"
+      >
+    </a>
     <div class="flex items-center gap-1">
       <AppLanguageSwitcher class="cursor-pointer lg:top-[31px] relative md:top-[27.1px] font-[Geomanist-Bold] text-ed-green text-[14px] lg:text-[19px]" />
       <BurgerMenuIcon
