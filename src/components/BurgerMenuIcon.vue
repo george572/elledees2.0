@@ -1,8 +1,10 @@
 <script setup lang='ts'>
-import { ref } from 'vue';
-
-const emit = defineEmits(['openNav']);
-const openNav = ref(false);
+defineProps({
+  openNav: {
+    type: Boolean,
+    default: false
+  }
+});
 
 </script>
 
@@ -10,7 +12,6 @@ const openNav = ref(false);
   <div
     class="nav-burger-menu"
     :class="{'open': openNav}"
-    @click="openNav = !openNav; emit('openNav', openNav)"
   >
     <span />
     <span />

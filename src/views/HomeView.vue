@@ -10,6 +10,7 @@ import AppFooter from '../components/AppFooter.vue';
 
 const isMobile = computed(() => window.innerWidth < 768);
 
+
 </script>
 
 <template>

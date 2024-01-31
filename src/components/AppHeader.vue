@@ -45,6 +45,7 @@ const computedNavLinks = computed(() => {
 })
 
 const navigateTo = (route) => {
+  openNav.value = false
   if (!route) return;
   router.push(route);
 }
@@ -94,7 +95,10 @@ watch(openNav, () => {
     >
     <div class="flex items-center gap-1">
       <AppLanguageSwitcher class="cursor-pointer lg:top-[31px] relative md:top-[27.1px] font-[Geomanist-Bold] text-ed-green text-[14px] lg:text-[19px]" />
-      <BurgerMenuIcon @open-nav="(data) => openNav = data" />
+      <BurgerMenuIcon
+        :open-nav="openNav"
+        @click="openNav = !openNav"
+      />
     </div>
     <div
       class="w-[0px] overflow-hidden h-[calc(100vh-50px)] bg-ed-green flex flex-col justify-center items-center gap-8 transition-all duration-300 absolute left-0 top-[56px] z-30" 

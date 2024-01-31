@@ -8,7 +8,6 @@ const store = useStore();
 const currentLanguage = ref(store.currentLanguage);
 
 const images = inject('images');
-// aranair variantshi ar aketebs normalurad hero bg suratis loads. mainc tavidan tvirtavs.
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { onMounted } from 'vue';
+import { onMounted, onBeforeUnmount } from 'vue';
 
 onMounted(() => {
     window.scrollTo(0, 0);
@@ -17,12 +17,13 @@ onMounted(() => {
         s.parentNode.insertBefore(z, s)
       })();
     `;
-    if (!document.getElementById('zelty-order-iframe')) {
-      document.body.appendChild(script);
+    let targetDiv = document.getElementById('target-div');
+    if (targetDiv && !document.getElementById('zelty-order-iframe')) {
+      targetDiv.appendChild(script);
     }
 });
 </script>
 
 <template>
-  <div />
+  <div id="target-div" />
 </template>
