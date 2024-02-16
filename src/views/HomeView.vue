@@ -6,7 +6,9 @@ import SaladsListSection from '../components/sections/SaladsListSection.vue';
 import WorkScheduleSection from '../components/sections/WorkScheduleSection.vue';
 import SliderSection from '../components/sections/SliderSection.vue';
 import ContactUsSection from '../components/sections/ContactUsSection.vue';
+import AboutUsSection from '../components/sections/AboutUsSection.vue';
 import AppFooter from '../components/AppFooter.vue';
+import OurValuesSection from '../components/sections/OurValuesSection.vue';
 
 const isMobile = computed(() => window.innerWidth < 768);
 
@@ -31,6 +33,8 @@ const isMobile = computed(() => window.innerWidth < 768);
     <div class="min-h-[288px] parallax bg-ed-pink relative">
       <SaladsListSection />
     </div>
+    <AboutUsSection />
+    <OurValuesSection />
     <WorkScheduleSection />
     <SliderSection />
     <div

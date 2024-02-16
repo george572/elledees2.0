@@ -55,7 +55,7 @@ const images = inject('images');
             <h2>11:30 - 15:30</h2>
           </div>
         </div>
-        <AppButton :additional-styles="'max-w-[445px] text-[12px] md:text-[18px] w-full border border-ed-green text-ed-green mt-5 mx-auto'">
+        <AppButton :additional-styles="'max-w-[445px] text-[12px] bg-white md:text-[18px] w-full border border-ed-green text-ed-green mt-5 mx-auto'">
           1 RUE BOURDALOUE 75009 PARIS
         </AppButton>
       </div>

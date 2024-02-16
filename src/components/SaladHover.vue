@@ -13,6 +13,9 @@ defineProps({
     :class="data.customClass"
   >
     <h1 class="font-[Cardinal] text-[18px] sm:text-[60px] leading-[20px] sm:leading-[50px] lg:text-[140px] text-center lg:leading-[120px]">
+      <span class="absolute top-3 sm:top-0 text-[12px] sm:text-[30px] right-2 sm:right-10 uppercase">
+        {{ data.season ? data.season : "" }}
+      </span>
       {{ data.name }}
     </h1>
     <p class="font-[Geomanist-Bold] text-[14px] sm:text-[25px] lg:text-[35px] text-center max-w-[457px]">
@@ -21,5 +24,23 @@ defineProps({
     <p class="font-[Geomanist-Bold] text-[12px] leading-[12px] sm:leading-[20px] sm:text-[16px] lg:text-[18px] text-center max-w-[320px]">
       {{ data.ingredients }}
     </p>
+    <div class="w-full font-[Geomanist-Bold] flex gap-2 sm:gap-10 justify-center mt-3 text-[12px] sm:text-[16px]">
+      <div class="text-center">
+        <p>Calories</p>
+        {{ data.nutritionData.calories }}
+      </div>
+      <div class="text-center">
+        <p>Proteines</p>
+        {{ data.nutritionData.proteines }}
+      </div>
+      <div class="text-center">
+        <p>Glucides</p>
+        {{ data.nutritionData.glucides }}
+      </div>
+      <div class="text-center">
+        <p>Lipides</p>
+        {{ data.nutritionData.lipides }}
+      </div>
+    </div>
   </div>
 </template>

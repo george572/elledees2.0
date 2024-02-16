@@ -1,7 +1,8 @@
 <script setup>
 import AppHeader from './components/AppHeader.vue';
 import AppLoading from './components/AppLoading.vue';
-import { ref, onBeforeMount, provide } from 'vue';
+import { ref, onBeforeMount, provide, computed } from 'vue';
+import { useRoute } from 'vue-router';
 import heroImg from '/src/assets/images/hero-img.png';
 import amoremioImg from "/src/assets/images/amoremio.png";
 import avecesarImg from "/src/assets/images/avecesar.png";
@@ -17,6 +18,7 @@ import kitchenImage from "/src/assets/images/kitchen.png"
 
 const loading = ref(true);
 const imagesLoaded = ref(0);
+const route = useRoute();
 
 const assetsToLoad = ref([
   { tag : 'heroImg', image : heroImg },
@@ -46,6 +48,10 @@ const loadedImages = ref({
   veggiemadnessImg: "",
   wildstrawberryImg: "",
   kitchenImg : ""
+});
+
+const isWelcomeRoute = computed(() => {
+  return route.path === '/welcome';
 });
 
 onBeforeMount(() => {
@@ -84,7 +90,7 @@ onBeforeMount(() => {
     <div 
       v-if="!loading"
     >
-      <AppHeader />
+      <AppHeader v-if="!isWelcomeRoute" />
       <RouterView />
     </div>
   </TransitionGroup>

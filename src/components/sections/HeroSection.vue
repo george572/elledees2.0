@@ -25,7 +25,7 @@ const images = inject('images');
       <h1 class="text-[60px] text-center xl:text-left md:text-[130px] xl:text-[130px] mx-auto font-[Cardinal] text-white leading-[50px] md:leading-[110px] xl:leading-[110px] uppercase max-w-[980px] mb-[80px]">
         {{ translations[currentLanguage].hero.title }}
       </h1>
-      <AppButton :additional-styles="'text-ed-green'">
+      <AppButton :additional-styles="'text-ed-green bg-white'">
         {{ translations[currentLanguage].hero.button }}
       </AppButton>
     </div>

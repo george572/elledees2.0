@@ -29,13 +29,13 @@ const navigationLinks = [
     href: "#header"
   },
   {
-    title: translations[currentLanguage.value].header.navigation.hours,
-    href : "#schedule",
+    title: translations[currentLanguage.value].header.navigation.about,
+    href : "#aboutus",
     to: "/"
   },
   {
-    title: translations[currentLanguage.value].header.navigation.contact,
-    href : "#contact",
+    title: translations[currentLanguage.value].header.navigation.catering,
+    href : "#caterings",
     to: "/"
   },
 ]

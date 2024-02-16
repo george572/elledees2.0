@@ -4,8 +4,8 @@ export const translationsData = {
             navigation: {
                 clickCollect: 'Click & Collect',
                 menu: "Menu",
-                hours: "Hours",
-                contact: "Contact"
+                about: "About Us",
+                catering: "Catering"
             }
         },
         hero: {
@@ -25,8 +25,8 @@ export const translationsData = {
             navigation: {
                 clickCollect: 'Click & Collect',
                 menu: "Menu",
-                hours: "Horaires",
-                contact: "Contact"
+                about: "A Propos",
+                catering: "Catering"
             }
         },
         hero: {
