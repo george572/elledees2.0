@@ -5,17 +5,14 @@
 <template>
   <div
     id="aboutus"
-    class="py-10 px-5 flex flex-col"
+    class="py-10 px-5 flex flex-col bg-ed-green text-ed-yellow"
   >
-    <div class="text-5xl font-[Geomanist-Bold] text-center pb-10">
-      About us
-    </div>
     <div class="flex flex-col md:flex-row justify-center items-center gap-5">
       <div class="w-full md:w-[50%] flex flex-col items-center">
-        <div class="text-3xl font-[Geomanist-Bold] text-center max-w-[600px]">
+        <div class="text-5xl font-[Cardinal] text-center max-w-[600px]">
           ELLE & DEE’S CONCEPT DE SALADES GOURMANDES
         </div>
-        <div class="text-center">
+        <div class="text-center text-lg font-[Geomanist]">
           <p class="pt-3">
             Notre mission ? Inspirer des communautés plus saines en connectant les gens à de vrais bons aliments
           </p>
@@ -26,13 +23,13 @@
       </div>
       <div class="w-full md:w-[50%] flex justify-center">
         <img
-          src="../../assets/images/2.jpg"
+          src="../../assets/images/bigcrispy.png"
           class="max-w-[500px] h-[250px] object-cover w-full float-right block"
           alt=""
         >
       </div>
     </div>
-    <div class="pt-5 text-center">
+    <div class="pt-5 text-center text-lg font-[Geomanist]">
       <p>
         Chez Elle & Dee’s, nos valeurs essentielles inspirent nos actions quotidiennes. Nous nous efforçons de responsabiliser nos clients,
         nos membres d'équipe et nos partenaires afin qu'ils deviennent une force positive dans le domaine alimentaire. C'est pourquoi nous
@@ -43,17 +40,17 @@
     <div class="flex pt-10 flex-col md:flex-row justify-center items-center gap-5">
       <div class="w-full md:w-[50%] flex justify-center">
         <img
-          src="../../assets/images/7.jpg"
+          src="../../assets/images/bigcrispy.png"
           class="max-w-[500px] h-[250px] object-cover w-full float-right block"
           alt=""
         >
       </div>
       <div class="w-full md:w-[50%] flex flex-col items-center">
-        <div class="text-3xl font-[Geomanist-Bold] text-center max-w-[600px]">
+        <div class="text-5xl font-[Cardinal] text-center max-w-[600px]">
           Nous avons lancé Elle&Dee's en tant que couple cherchant
           un moyen de manger sainement mais gourmand.
         </div>
-        <div class="text-center">
+        <div class="text-center text-lg font-[Geomanist]">
           <p class="pt-3">
             Lors de nos recherches, nous nous sommes rendu compte que l'offre de salades
             à Paris était chère, avec des produits de qualité médiocre, et peu saine. Nous

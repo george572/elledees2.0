@@ -19,7 +19,7 @@ defineProps({
       {{ data.name }}
     </h1>
     <p class="font-[Geomanist-Bold] text-[14px] sm:text-[25px] lg:text-[35px] text-center max-w-[457px]">
-      {{ data.sauceName }}
+      {{ data.sauceName }} ({{ data.sauceCalories + 'kcal' }})
     </p>
     <p class="font-[Geomanist-Bold] text-[12px] leading-[12px] sm:leading-[20px] sm:text-[16px] lg:text-[18px] text-center max-w-[320px]">
       {{ data.ingredients }}
