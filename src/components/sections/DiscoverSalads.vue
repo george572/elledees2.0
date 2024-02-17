@@ -2,7 +2,9 @@
 import AppButton from '../AppButton.vue';
 import { useStore } from '../../stores';
 import { inject, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const translations = inject('translations');
 const store = useStore();
 const currentLanguage = ref(store.currentLanguage);
@@ -21,15 +23,18 @@ const currentLanguage = ref(store.currentLanguage);
       <AppButton
         :additional-styles="'text-ed-pink border border-ed-pink'"
         :outline="true"
+        @click="router.push('/click-and-collect')"
       >
         {{ translations[currentLanguage].about.buttons.order }}
       </AppButton>
-      <AppButton
-        :additional-styles="'text-ed-pink border border-ed-pink'"
-        :outline="true"
-      >
-        {{ translations[currentLanguage].about.buttons.menu }}
-      </AppButton>
+      <a href="#salads-list">
+        <AppButton
+          :additional-styles="'text-ed-pink border border-ed-pink'"
+          :outline="true"
+        >
+          {{ translations[currentLanguage].about.buttons.menu }}
+        </AppButton>
+      </a>
     </div>
   </div>
 </template>

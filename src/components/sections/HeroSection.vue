@@ -1,8 +1,10 @@
 <script setup>
 import AppButton from '../AppButton.vue';
 import { useStore } from '../../stores';
-import { inject, ref, computed } from 'vue';
+import { inject, ref } from 'vue';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const translations = inject('translations');
 const store = useStore();
 const currentLanguage = ref(store.currentLanguage);
@@ -25,7 +27,10 @@ const images = inject('images');
       <h1 class="text-[60px] text-center xl:text-left md:text-[130px] xl:text-[130px] mx-auto font-[Cardinal] text-white leading-[50px] md:leading-[110px] xl:leading-[110px] uppercase max-w-[980px] mb-[80px]">
         {{ translations[currentLanguage].hero.title }}
       </h1>
-      <AppButton :additional-styles="'text-ed-green bg-white'">
+      <AppButton
+        :additional-styles="'text-ed-green bg-white'"
+        @click="router.push('/click-and-collect')"
+      >
         {{ translations[currentLanguage].hero.button }}
       </AppButton>
     </div>

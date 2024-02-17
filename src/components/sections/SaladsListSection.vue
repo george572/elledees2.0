@@ -188,9 +188,6 @@ const saladsData = ref([
         />
       </Transition>
     </div>
-    <AppButton :additional-styles="'bg-white text-ed-red mt-20'">
-      Découvrir le menu
-    </AppButton>
   </div>
 </template>
 
