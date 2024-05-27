@@ -10,7 +10,7 @@ const navigateTo = (route) => {
 </script>
 
 <template>
-  <div class="min-h-screen w-full flex justify-center lg:justify-start flex-col items-center bg-ed-beige">
+  <div class="min-h-screen w-full flex justify-center lg:justify-start pb-20 flex-col items-center bg-ed-beige">
     <h2 class="font-[Cardinal] text-[50px] sm:text-[100px] lg:text-[200px] xl:text-[300px] uppercase tracking-tight text-ed-green">
       Elle&Dee's
     </h2>
@@ -51,9 +51,9 @@ const navigateTo = (route) => {
       </a>
       <AppButton
         :additional-styles="'text-white hover:bg-transparent hover:border hover:border-ed-green hover:text-ed-green bg-ed-green'"
-        @click="navigateTo('/#salads-list')"
+        @click="navigateTo('/nutrition-info')"
       >
-        Catering 
+        VALEURS NUTRITIONNELLES
       </AppButton>
       <AppButton
         :additional-styles="'text-white hover:bg-transparent hover:border hover:border-ed-green hover:text-ed-green bg-ed-green'"

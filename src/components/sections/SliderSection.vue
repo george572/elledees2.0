@@ -22,21 +22,49 @@ onMounted(() => {
       <ul class="glide__slides">
         <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
-            src="../../assets/images/s1.png"
+            src="../../assets/images/non.jpg"
             alt=""
             class="h-[327px] md:h-[600px] object-cover sm:min-w-[759px] w-full"
           >
         </li>
         <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
-            src="../../assets/images/s2.png"
+            src="../../assets/images/non3.jpg"
             alt=""
             class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
           >
         </li>
         <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
           <img
-            src="../../assets/images/s3.png"
+            src="../../assets/images/non4.jpg"
+            alt=""
+            class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
+          >
+        </li>
+        <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
+          <img
+            src="../../assets/images/non6.jpg"
+            alt=""
+            class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
+          >
+        </li>
+        <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
+          <img
+            src="../../assets/images/non7.jpg"
+            alt=""
+            class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
+          >
+        </li>
+        <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
+          <img
+            src="../../assets/images/non9.jpg"
+            alt=""
+            class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
+          >
+        </li>
+        <li class="glide__slide w-full sm:min-w-[500px] lg:min-w-[600px]">
+          <img
+            src="../../assets/images/non10.jpg"
             alt=""
             class="h-[327px] md:h-[600px] object-cover w-full sm:min-w-[759px]"
           >

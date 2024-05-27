@@ -1,59 +1,45 @@
 <script setup>
 import { ref, inject } from "vue";
 import SaladHover from "../SaladHover.vue";
-import AppButton from "../AppButton.vue";
+import { useStore } from '../../stores';
 
 const images = inject('images');
 const saladsData = ref([
   {
-    name : "Amore Mio", 
-    sauceName: "Sauce pesto",
-    sauceCalories: "240",
-    ingredients: "Penne, concombres, tomates cerises, féta, oignons rouges, olives noires, pignons, roquette, mesclun",
-    img: 'amoremioImg',
-    showHover: false,
-    customClass: 'bg-ed-yellow text-ed-red',
-    nutritionData : {
-      calories: "315",
-      proteines: "14G",
-      glucides: "43G",
-      lipides: "36g"
-    }
-  },
-  {
-    name: "Big Crispy",
-    sauceName: "Sauce miel-moutarde",
-    sauceCalories: "240",
-    ingredients: "Quinoa, avocat, poitrine de poulet rôtie, tomates cerises, oignons frits, pousses d'épinards, batavia",
-    img: 'bigcrispyImg',
+    name: "Ave Cesar",
+    translationName : 'aveCesar',
+    sauceName: "Sauce César",
+    sauceCalories: "258",
+    ingredients: "",
+    img: 'avecesarImg',
     showHover: false,
     customClass: 'bg-ed-pink text-ed-yellow',
     nutritionData : {
-      calories: "590",
-      proteines: "33G",
-      glucides: "63G",
-      lipides: "27g"
+      calories: "647",
+      proteines: "48G",
+      glucides: "18G",
+      lipides: "37G"
     }
-
-  } ,
+  },
   {
-    name: "French Riviera",
-    sauceName: "Vinaigrette huile d'olive-citron",
-    sauceCalories: "180",
-    ingredients: "Saumon mi-cuit, riz, oeuf dur, mozzarella, tomates cerises, olives noires, cébettes, pignons, mesclun, batas",
-    img: 'frenchrivImg',
+    name: "Habibi Yallah",
+    translationName : 'habibi',
+    sauceName: "Sauce curcuma-tahini",
+    sauceCalories: "230",
+    ingredients: "Patates douces rôties, féta, tomates cerises, boulgour, pois chiches, oignons rouges, concombres, pitas croustillantes, menthe, persil, mesclun, batavia",
+    img: 'habibiImg',
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow',
     nutritionData : {
-      calories: "490",
-      proteines: "32G",
-      glucides: "45G",
-      lipides: "20g"
+      calories: "470",
+      proteines: "19G",
+      glucides: "53G",
+      lipides: "14G"
     }
-
   },
   {
     name: "Buffalo Bill",
+    translationName : 'buffaloBill',
     sauceName: "Sauce Ranch",
     sauceCalories: "240",
     ingredients: "Chips de bacon, œuf dur, bleu, tomates cerises, avocat, oignons rouges, pitas croustillantes, batavia",
@@ -70,6 +56,7 @@ const saladsData = ref([
   },
   {
     name: "Mexican Dream",
+    translationName : 'mexicanDream',
     sauceName: "Sauce coriandre-cumin",
     sauceCalories: "230",
     ingredients: "Poitrine de poulet rôtie, parmesan, avocat, chips de bacon, tomates cerises, pitas croustillantes, cébettes, batavia",
@@ -84,22 +71,90 @@ const saladsData = ref([
     }
   },
   {
-    name: "Habibi Yallah",
-    sauceName: "Sauce curcuma-tahini",
-    sauceCalories: "230",
-    ingredients: "Patates douces rôties, féta, tomates cerises, boulgour, pois chiches, oignons rouges, concombres, pitas croustillantes, menthe, persil, mesclun, batavia",
-    img: 'habibiImg',
+    name : "Amore Mio",
+    translationName : 'amoreMio',
+    sauceName: "Sauce pesto",
+    sauceCalories: "240",
+    ingredients: "Penne, concombres, tomates cerises, féta, oignons rouges, olives noires, pignons, roquette, mesclun",
+    img: 'amoremioImg',
+    showHover: false,
+    customClass: 'bg-ed-yellow text-ed-red',
+    nutritionData : {
+      calories: "315",
+      proteines: "14G",
+      glucides: "43G",
+      lipides: "36g"
+    }
+  },
+  {
+    name: "Big Crispy",
+    translationName : 'bigCrispy',
+    sauceName: "Sauce miel-moutarde",
+    sauceCalories: "240",
+    ingredients: "Quinoa, avocat, poitrine de poulet rôtie, tomates cerises, oignons frits, pousses d'épinards, batavia",
+    img: 'bigcrispyImg',
+    showHover: false,
+    customClass: 'bg-ed-pink text-ed-yellow',
+    nutritionData : {
+      calories: "590",
+      proteines: "33G",
+      glucides: "63G",
+      lipides: "27g"
+    }
+
+  } ,
+  {
+    name: "Super Sour",
+    translationName : 'superSour',
+    sauceName: "Sauce miel-moutarde",
+    sauceCalories: "240",
+    ingredients: "Avocat, brocoli cru, carottes râpées, parmesan, canneberges séchées, pitas croustillantes, graines de tournesol, roquette, batavia",
+    img: 'supersourImg',
+    showHover: false,
+    customClass: 'bg-ed-yellow text-ed-red',
+    nutritionData : {
+      calories: "588",
+      proteines: "24G",
+      glucides: "31G",
+      lipides: "38G"
+    }
+  },
+  {
+    name: "French Riviera",
+    translationName : 'frenchRiviera',
+    sauceName: "Vinaigrette huile d'olive-citron",
+    sauceCalories: "180",
+    ingredients: "Saumon mi-cuit, riz, oeuf dur, mozzarella, tomates cerises, olives noires, cébettes, pignons, mesclun, batas",
+    img: 'frenchrivImg',
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow',
     nutritionData : {
-      calories: "470",
-      proteines: "19G",
-      glucides: "53G",
-      lipides: "14G"
+      calories: "490",
+      proteines: "32G",
+      glucides: "45G",
+      lipides: "20g"
+    }
+
+  },
+  {
+    name: "Veggie Madness",
+    translationName : 'veggieMadness',
+    sauceName: "Sauce Tamari",
+    sauceCalories: "280",
+    ingredients: "Tofu mariné rôti, concombre, carottes râpées, brocoli cru, chou rouge, oignons rouges, graines de sésame, mesclun, batavia",
+    img: 'veggiemadnessImg',
+    showHover: false,
+    customClass: 'bg-ed-yellow text-ed-red',
+    nutritionData : {
+      calories: "185",
+      proteines: "15G",
+      glucides: "21G",
+      lipides: "7g"
     }
   },
   {
     name: "Wild Strawberry",
+    translationName : 'wildStrawberry',
     sauceName: "Vinaigrette balsamique",
     sauceCalories: "315",
     ingredients: "Fraises, avocat, carottes râpées, concombre, parmesan, pitas croustillantes, mesclun, batavia",
@@ -116,50 +171,21 @@ const saladsData = ref([
 
   },
   {
-    name: "Veggie Madness",
-    sauceName: "Sauce Tamari",
-    sauceCalories: "280",
-    ingredients: "Tofu mariné rôti, concombre, carottes râpées, brocoli cru, chou rouge, oignons rouges, graines de sésame, mesclun, batavia",
-    img: 'veggiemadnessImg',
+    name: "Tangerine Crunch",
+    translationName : 'tangerineCrunch',
+    sauceName: "VINAIGRETTE SUCRÉE AU SÉSAME",
+    sauceCalories: "268kcal",
+    ingredients: "clémentine, nouilles croustillantes, carottes râpées, avocat, tomates cerises, graines de sésame, mesclun, batavia",
+    img: 'tangerineImg',
     showHover: false,
-    customClass: 'bg-ed-yellow text-ed-red',
+    customClass: 'bg-ed-green text-ed-yellow',
     nutritionData : {
-      calories: "185",
-      proteines: "15G",
-      glucides: "21G",
-      lipides: "7g"
-    }
+      calories: "213",
+      proteines: "23,1G",
+      glucides: "7,1G",
+      lipides: "11,8G"
+    },
   },
-  {
-    name: "Super Sour",
-    sauceName: "Sauce miel-moutarde",
-    sauceCalories: "240",
-    ingredients: "Avocat, brocoli cru, carottes râpées, parmesan, canneberges séchées, pitas croustillantes, graines de tournesol, roquette, batavia",
-    img: 'supersourImg',
-    showHover: false,
-    customClass: 'bg-ed-yellow text-ed-red',
-    nutritionData : {
-      calories: "588",
-      proteines: "24G",
-      glucides: "31G",
-      lipides: "38G"
-    }
-  },
-  {
-    name: "Ave Cesar",
-    sauceName: "Sauce César",
-    sauceCalories: "258",
-    ingredients: "Poitrine de poulet rôtie, parmesan, avocat, chips de bacon, tomates cerises, pitas croustillantes, cébettes, batavia",
-    img: 'avecesarImg',
-    showHover: false,
-    customClass: 'bg-ed-pink text-ed-yellow',
-    nutritionData : {
-      calories: "647",
-      proteines: "48G",
-      glucides: "18G",
-      lipides: "37G"
-    }
-  }
 ]);
 
 

@@ -1,10 +1,18 @@
 <script setup lang='ts'>
 defineProps({
     data: {
-        type: Object,
-        required: true
+      type: Object,
+      required: true
     },
 })
+
+import { inject } from "vue";
+import { useStore } from "../stores";
+import { storeToRefs } from 'pinia';
+
+const translations = inject('translations');
+const store = useStore();
+const { currentLanguage } = storeToRefs(store);
 </script>
 
 <template>
@@ -22,23 +30,25 @@ defineProps({
       {{ data.sauceName }} ({{ data.sauceCalories + 'kcal' }})
     </p>
     <p class="font-[Geomanist-Bold] text-[12px] leading-[12px] sm:leading-[20px] sm:text-[16px] lg:text-[18px] text-center max-w-[320px]">
-      {{ data.ingredients }}
+      {{ 
+        translations[currentLanguage].salads[data.translationName].ingredients
+      }}
     </p>
     <div class="w-full font-[Geomanist-Bold] flex gap-2 sm:gap-10 justify-center mt-3 text-[12px] sm:text-[16px]">
       <div class="text-center">
-        <p>Calories</p>
+        <p>{{ translations[currentLanguage].salads.calories }}</p>
         {{ data.nutritionData.calories }}
       </div>
       <div class="text-center">
-        <p>Proteines</p>
+        <p>{{ translations[currentLanguage].salads.proteines }}</p>
         {{ data.nutritionData.proteines }}
       </div>
       <div class="text-center">
-        <p>Glucides</p>
+        <p>{{ translations[currentLanguage].salads.fats }}</p>
         {{ data.nutritionData.glucides }}
       </div>
       <div class="text-center">
-        <p>Lipides</p>
+        <p>{{ translations[currentLanguage].salads.Carbohydrates }}</p>
         {{ data.nutritionData.lipides }}
       </div>
     </div>

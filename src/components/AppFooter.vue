@@ -1,5 +1,11 @@
 <script setup lang='ts'>
-// 
+import { inject } from 'vue';
+import { useStore } from '../stores';
+import { storeToRefs } from 'pinia';
+
+const translations = inject('translations');
+const store = useStore();
+const { currentLanguage } = storeToRefs(store);
 </script>
 
 <template>
@@ -7,22 +13,15 @@
     <div class="pb-10 min-h-[376px] flex items-center pt-10 md:pt-0 flex-col md:flex-row lg:items-end max-w-[1500px] gap-20 md:gap-0 justify-between mx-auto px-5">
       <div class="font-[Geomanist-Bold] text-[#60BE7E] text-[15px] flex flex-col md:flex-row gap-10">
         <div class="flex flex-col gap-1">
-          <span>lundi-vendredi</span>
-          <span>12h - 15h & 18h45 - 22h15</span>
-          <span>samedi</span>
-          <span>11h30 - 16h</span>
-          <span>dimanche</span>
-          <span>11h30 - 15h30 & 17h30 - 22h
-          </span>
-        </div>
-        <div class="flex flex-col gap-1">
           <span>1 RUE BOURDALOUE 75009 PARIS</span>
           <a href="mailto:HELLO@ELLEDEES.COM">HELLO@ELLEDEES.COM</a>
           <a href="tel:+33987373123">+33987373123</a>
-          <a
-            href=""
+          <router-link
+            to="/terms"
             class="mt-0 md:mt-[51px]"
-          >Terms & Conditions</a>
+          >
+            Terms & Conditions
+          </router-link>
         </div>
       </div>
       <img

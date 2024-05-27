@@ -2,23 +2,25 @@
 import AppHeader from './components/AppHeader.vue';
 import AppLoading from './components/AppLoading.vue';
 import { ref, onBeforeMount, provide, computed } from 'vue';
-import { useRoute } from 'vue-router';
-import heroImg from '/src/assets/images/hero-img.png';
-import amoremioImg from "/src/assets/images/amoremio.png";
-import avecesarImg from "/src/assets/images/avecesar.png";
-import bigcrispyImg from "/src/assets/images/bigcrispy.png";
-import bufallobillImg from "/src/assets/images/bufallobill.png";
-import frenchrivImg from "/src/assets/images/frenchriv.png";
-import habibiImg from "/src/assets/images/habibi.png";
-import mexicandreamImg from "/src/assets/images/mexicandream.png";
-import supersourImg from "/src/assets/images/supersour.png";
-import veggiemadnessImg from "/src/assets/images/veggiemadness.png";
+import { useRoute, useRouter } from 'vue-router';
+import heroImg from '/src/assets/images/hero-min.JPG';
+import amoremioImg from "/src/assets/images/amoremio.JPG";
+import avecesarImg from "/src/assets/images/avecesar.jpg";
+import bigcrispyImg from "/src/assets/images/bigcrispy.jpg";
+import bufallobillImg from "/src/assets/images/buffalobill.jpg";
+import frenchrivImg from "/src/assets/images/frenchriviera.jpg";
+import habibiImg from "/src/assets/images/habibi.jpg";
+import mexicandreamImg from "/src/assets/images/mexicandream.jpg";
+import supersourImg from "/src/assets/images/supersour.jpg";
+import veggiemadnessImg from "/src/assets/images/veggiemadness.jpg";
 import wildstrawberryImg from "/src/assets/images/wildstrawberry.png";
-import kitchenImage from "/src/assets/images/kitchen.png"
+import kitchenImage from "/src/assets/images/non10.JPG"
+import tangerineImg from "/src/assets/images/tangerine.JPG"
 
 const loading = ref(true);
 const imagesLoaded = ref(0);
 const route = useRoute();
+const router = useRouter();
 
 const assetsToLoad = ref([
   { tag : 'heroImg', image : heroImg },
@@ -33,6 +35,7 @@ const assetsToLoad = ref([
   { tag : 'veggiemadnessImg', image : veggiemadnessImg },
   { tag : 'wildstrawberryImg', image : wildstrawberryImg },
   { tag : 'kitchenImg', image : kitchenImage },
+  { tag : 'tangerineImg', image : tangerineImg },
 ]);
 
 const loadedImages = ref({
@@ -47,7 +50,8 @@ const loadedImages = ref({
   supersourImg: "",
   veggiemadnessImg: "",
   wildstrawberryImg: "",
-  kitchenImg : ""
+  kitchenImg : "",
+  tangerineImg: "",
 });
 
 const isWelcomeRoute = computed(() => {
@@ -55,6 +59,10 @@ const isWelcomeRoute = computed(() => {
 });
 
 onBeforeMount(() => {
+  console.log(document.URL, route)
+  if (document.URL.includes('welcome') && route.fullPath !== 'welcome') {
+      router.push('/welcome')
+    }
   let imagesToLoad = assetsToLoad.value.length;
 
   window.onscroll = () => {

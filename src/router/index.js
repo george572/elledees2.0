@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -17,6 +17,21 @@ const router = createRouter({
       path: '/welcome',
       name: 'Welcome',
       component: () => import('../views/WelcomeView.vue')
+    },
+    {
+      path: '/menu',
+      name: 'Menu page',
+      component: () => import('../views/MenuView.vue')
+    },
+    {
+      path: '/terms',
+      name: 'Terms and conditions',
+      component: () => import('../views/TermsView.vue')
+    },
+    {
+      path: '/nutrition-info',
+      name: 'Nutrition Info',
+      component: () => import('../views/NutritionInfoView.vue')
     },
   ],
   scrollBehavior(to, from, savedPosition) {

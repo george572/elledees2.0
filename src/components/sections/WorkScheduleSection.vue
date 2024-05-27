@@ -1,16 +1,26 @@
 <script setup>
-import { inject} from 'vue';
+import { inject } from 'vue';
+import { useStore } from '../../stores';
+import { storeToRefs } from 'pinia';
+
+const translations = inject('translations');
+const store = useStore();
+const { currentLanguage } = storeToRefs(store);
 
 import AppButton from '../AppButton.vue';
 
 const images = inject('images');
+
+const redirectToMap = () => {
+  window.open('https://maps.app.goo.gl/1Prz4EZULEiNHcvJA?g_st=ic ', '_blank')
+}
 </script>
 
 <template>
   <div>
     <img
       :src="images.kitchenImg.image"
-      class="w-full"
+      class="w-full h-[605px] object-cover"
     >
     <div
       id="schedule"
@@ -31,8 +41,8 @@ const images = inject('images');
         >
         <div class="flex items-center font-[Geomanist-Bold] text-[20px] md:text-[45px] text-ed-red uppercase justify-between w-full">
           <div>
-            <h2>du lundi</h2>
-            <h2>au vendredi</h2>
+            <h2>{{ translations[currentLanguage].schedule.fromMonday }}</h2>
+            <h2>{{ translations[currentLanguage].schedule.friday }}</h2>
           </div>
           <div>
             <h2>12:00 - 15:00</h2>  
@@ -41,21 +51,25 @@ const images = inject('images');
         </div>
         <div class="flex items-center font-[Geomanist-Bold] text-[20px] md:text-[45px] text-ed-red uppercase justify-between w-full">
           <div>
-            <h2>samedi</h2>
+            <h2>{{ translations[currentLanguage].schedule.saturday }}</h2>
           </div>
           <div>
             <h2>11:30 - 16:00</h2>
           </div>
         </div>
-        <div class="flex items-center font-[Geomanist-Bold] text-[20px] md:text-[45px] text-ed-red uppercase justify-between w-full">
+        <div class="flex items-start font-[Geomanist-Bold] text-[20px] md:text-[45px] text-ed-red uppercase justify-between w-full">
           <div>
-            <h2>dimanche</h2>
+            <h2>{{ translations[currentLanguage].schedule.sunday }}</h2>
           </div>
           <div>
             <h2>11:30 - 15:30</h2>
+            <h2>17:30 - 22:00</h2>
           </div>
         </div>
-        <AppButton :additional-styles="'max-w-[445px] text-[12px] bg-white md:text-[18px] w-full border border-ed-green text-ed-green mt-5 mx-auto'">
+        <AppButton
+          :additional-styles="'max-w-[445px] text-[12px] bg-white md:text-[18px] w-full border border-ed-green text-ed-green mt-5 mx-auto'"
+          @click="redirectToMap"
+        >
           1 RUE BOURDALOUE 75009 PARIS
         </AppButton>
       </div>

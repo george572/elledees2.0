@@ -3,24 +3,37 @@ import { ref, watch, onMounted } from 'vue';
 import { useStore} from './../stores/index';
 const store = useStore();
 
-const selectedLanguage = ref(store.currentLanguage);
+const selectedLanguage = ref<any>(store.currentLanguage);
 const availableLanguage = ref();
 const openChangeLanguage = ref(false);
 
 onMounted(() => {
+  const storedLang = window.localStorage.getItem('lang');
+  if (storedLang && storedLang === 'fr' || storedLang === 'en') {
+    window.localStorage.setItem('lang', storedLang);
+    store.changeLanguage(storedLang);
     determineChangeableLanguage();
+    selectedLanguage.value = storedLang;
+    return;
+  }
+  window.localStorage.setItem('lang', 'fr');
+  store.changeLanguage('fr');
+  selectedLanguage.value = 'fr';
+  determineChangeableLanguage();
 });
 
 const changeLanguage = () => {
-    selectedLanguage.value = availableLanguage.value;
-    openChangeLanguage.value = false;
+  selectedLanguage.value = availableLanguage.value;
+  openChangeLanguage.value = false;
+  store.changeLanguage(selectedLanguage.value);
+  window.localStorage.setItem('lang', selectedLanguage.value);
 }
 
 const determineChangeableLanguage = () => {
-    return selectedLanguage.value === 'en' ? availableLanguage.value = 'fr' : availableLanguage.value = 'en'
+  return selectedLanguage.value === 'en' ? availableLanguage.value = 'fr' : availableLanguage.value = 'en'
 }
 watch(selectedLanguage, () => {
-    determineChangeableLanguage();
+  determineChangeableLanguage();
 });
 </script>
 

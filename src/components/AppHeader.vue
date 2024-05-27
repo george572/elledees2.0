@@ -20,23 +20,22 @@ const navigationLinks = [
   },
   {
     title: translations[currentLanguage.value].header.navigation.menu,
-    href : "#salads-list",
-    to: "/"
+    to: "/menu"
   },
   {
     title: 'logo',
-    to: "/",
-    href: "#header"
+    href: "#header",
+    to: '/',
   },
   {
     title: translations[currentLanguage.value].header.navigation.about,
     href : "#aboutus",
-    to: "/"
+    to: '/',
   },
   {
-    title: translations[currentLanguage.value].header.navigation.catering,
-    href : "#caterings",
-    to: "/"
+    title: translations[currentLanguage.value].header.navigation.contact,
+    href : "#contact",
+    to: '/',
   },
 ]
 
@@ -44,10 +43,14 @@ const computedNavLinks = computed(() => {
   return navigationLinks.filter((navLink) => navLink.title !== 'logo');
 })
 
-const navigateTo = (route) => {
+const navigateTo = (routeEl) => {
+  if (routeEl.href) {
+  router.push('/' + routeEl.href);
+  }
+  else {
+    router.push(routeEl.to);
+  }
   openNav.value = false
-  if (!route) return;
-  router.push(route);
 }
 
 watch(openNav, () => {
@@ -63,12 +66,11 @@ watch(openNav, () => {
   <div
     class="hidden md:flex gap-8 items-center justify-center py-6 mx-auto sticky top-0 z-40 bg-white h-[84px]"
   >
-    <a
+    <span
       v-for="navLink in navigationLinks"
       :key="navLink.title"
-      :href="navLink.href"
       class="cursor-pointer font-[Geomanist-Bold] uppercase text-ed-green align-middle text-[14px] lg:text-[19px] transition-all duration-50 active:text-ed-yellow"
-      @click="navigateTo(navLink.to)"
+      @click="navigateTo(navLink)"
     >
       <img
         v-if="navLink.title === 'logo'"
@@ -82,7 +84,7 @@ watch(openNav, () => {
       >
         {{ navLink.title }}
       </p>
-    </a>
+    </span>
     <AppLanguageSwitcher class="absolute right-[45px] z-50 cursor-pointer lg:top-[30px] md:top-[32px] font-[Geomanist-Bold] text-ed-green  text-[14px] lg:text-[19px]" />
   </div>
 
@@ -109,19 +111,18 @@ watch(openNav, () => {
       class="w-[0px] overflow-hidden h-[calc(100vh-50px)] bg-ed-green flex flex-col justify-center items-center gap-8 transition-all duration-300 absolute left-0 top-[56px] z-30" 
       :class="{'w-[100%]' : openNav}"
     >
-      <a
+      <span
         v-for="navLink in computedNavLinks"
         :key="navLink.title"
-        :href="navLink.href"
         class="font-[Geomanist-Bold] uppercase font-bol text-ed-yellow align-middle text-[30px] whitespace-nowrap active:text-white"
-        @click="navigateTo(navLink.to)"
+        @click="navigateTo(navLink)"
       >
         <p
           class="transform translate-y-0.5"
         >
           {{ navLink.title }}
         </p>
-      </a>
+      </span>
     </div>
   </div>
 </template>

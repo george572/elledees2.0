@@ -34,7 +34,7 @@ const isMobile = computed(() => window.innerWidth < 768);
       <SaladsListSection />
     </div>
     <AboutUsSection />
-    <OurValuesSection />
+    <!-- <OurValuesSection /> -->
     <WorkScheduleSection />
     <SliderSection />
     <div

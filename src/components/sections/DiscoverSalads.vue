@@ -1,13 +1,15 @@
 <script setup>
 import AppButton from '../AppButton.vue';
-import { useStore } from '../../stores';
-import { inject, ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { inject, ref } from 'vue';
+import { useStore } from '../../stores';
+import { storeToRefs } from 'pinia';
 
-const router = useRouter();
 const translations = inject('translations');
 const store = useStore();
-const currentLanguage = ref(store.currentLanguage);
+const { currentLanguage } = storeToRefs(store);
+
+const router = useRouter();
 
 </script>
 
@@ -27,14 +29,13 @@ const currentLanguage = ref(store.currentLanguage);
       >
         {{ translations[currentLanguage].about.buttons.order }}
       </AppButton>
-      <a href="#salads-list">
-        <AppButton
-          :additional-styles="'text-ed-pink border border-ed-pink'"
-          :outline="true"
-        >
-          {{ translations[currentLanguage].about.buttons.menu }}
-        </AppButton>
-      </a>
+      <AppButton
+        :additional-styles="'text-ed-pink border border-ed-pink'"
+        :outline="true"
+        @click="router.push('/menu')"
+      >
+        {{ translations[currentLanguage].about.buttons.menu }}
+      </AppButton>
     </div>
   </div>
 </template>
