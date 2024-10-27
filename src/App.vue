@@ -4,18 +4,18 @@ import AppLoading from './components/AppLoading.vue';
 import { ref, onBeforeMount, provide, computed } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import heroImg from '/src/assets/images/hero-min.JPG';
-import amoremioImg from "/src/assets/images/amoremio.JPG";
-import avecesarImg from "/src/assets/images/avecesar.jpg";
-import bigcrispyImg from "/src/assets/images/bigcrispy.jpg";
-import bufallobillImg from "/src/assets/images/buffalobill.jpg";
-import frenchrivImg from "/src/assets/images/frenchriviera.jpg";
-import habibiImg from "/src/assets/images/habibi.jpg";
-import mexicandreamImg from "/src/assets/images/mexicandream.jpg";
-import supersourImg from "/src/assets/images/supersour.jpg";
-import veggiemadnessImg from "/src/assets/images/veggiemadness.jpg";
-import wildstrawberryImg from "/src/assets/images/wildstrawberry.png";
+import amoremioImg from "/src/assets/images/amoremio.webp";
+import avecesarImg from "/src/assets/images/avecesar.webp";
+import bigcrispyImg from "/src/assets/images/bigcrispy.webp";
+import bufallobillImg from "/src/assets/images/buffalobill.webp";
+import frenchrivImg from "/src/assets/images/frenchriviera.webp";
+import habibiImg from "/src/assets/images/habibi.webp";
+import mexicandreamImg from "/src/assets/images/mexicandream.webp";
+import supersourImg from "/src/assets/images/supersour.webp";
+import veggiemadnessImg from "/src/assets/images/veggiemadness.webp";
+import wildstrawberryImg from "/src/assets/images/wildstrawberry.webp";
 import kitchenImage from "/src/assets/images/non10.JPG"
-import tangerineImg from "/src/assets/images/tangerine.JPG"
+import tangerineImg from "/src/assets/images/tangerine.webp"
 
 const loading = ref(true);
 const imagesLoaded = ref(0);

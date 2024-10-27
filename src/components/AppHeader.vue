@@ -15,11 +15,13 @@ const openNav = ref(false);
 const navigationLinks = [
   {
     title: translations[currentLanguage.value].header.navigation.clickCollect,
-    to: "/click-and-collect",
+    href: "https://elledees.zelty-order.fr/",
+    to: "/",
+    newTab: true,
   },
   {
     title: translations[currentLanguage.value].header.navigation.menu,
-    to: "/menu",
+    to: "/menu-select",
   },
   {
     title: "logo",
@@ -43,6 +45,9 @@ const computedNavLinks = computed(() => {
 });
 
 const navigateTo = (routeEl) => {
+  if (routeEl.newTab) {
+    window.open(routeEl.href, '_blank');
+  }
   if (routeEl.href) {
     router.push("/" + routeEl.href);
   } else {

@@ -10,6 +10,10 @@ const store = useStore();
 const currentLanguage = ref(store.currentLanguage);
 
 const images = inject('images');
+
+const navigateToClickAdCollect = () => {
+  window.open("https://elledees.zelty-order.fr/", "_blank");
+}
 </script>
 
 <template>
@@ -29,7 +33,7 @@ const images = inject('images');
       </h1>
       <AppButton
         :additional-styles="'text-ed-green bg-white'"
-        @click="router.push('/click-and-collect')"
+        @click="navigateToClickAdCollect"
       >
         {{ translations[currentLanguage].hero.button }}
       </AppButton>

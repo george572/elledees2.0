@@ -53,5 +53,8 @@ const isMobile = computed(() => window.innerWidth < 768);
   background-position: center;
   background-repeat: no-repeat;
   background-size: 51%;
+  @media only screen and (max-width: 500px) {
+    background-image: none;
+  }
 }
 </style>

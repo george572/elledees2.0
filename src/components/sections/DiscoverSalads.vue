@@ -11,6 +11,9 @@ const { currentLanguage } = storeToRefs(store);
 
 const router = useRouter();
 
+const navigateToClickAndCollect = () => {
+  window.open("https://elledees.zelty-order.fr/", "_blank");
+}
 </script>
 
 <template>
@@ -25,16 +28,16 @@ const router = useRouter();
       <AppButton
         :additional-styles="'text-ed-pink border border-ed-pink'"
         :outline="true"
-        @click="router.push('/click-and-collect')"
+        @click="navigateToClickAndCollect"
       >
-        {{ translations[currentLanguage].about.buttons.order }}
+        {{ translations[currentLanguage].about.buttons.order }} 
       </AppButton>
       <AppButton
         :additional-styles="'text-ed-pink border border-ed-pink'"
         :outline="true"
         @click="router.push('/menu')"
       >
-        {{ translations[currentLanguage].about.buttons.menu }}
+        {{ translations[currentLanguage].about.buttons.menu }} 
       </AppButton>
     </div>
   </div>

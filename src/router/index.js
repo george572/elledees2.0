@@ -19,9 +19,14 @@ const router = createRouter({
       component: () => import('../views/WelcomeView.vue')
     },
     {
-      path: '/menu',
+      path: '/menu/:restaurantId',
       name: 'Menu page',
       component: () => import('../views/MenuView.vue')
+    },
+    {
+      path: '/menu-select',
+      name: 'Menu Select',
+      component: () => import('../views/MenuSelectView.vue')
     },
     {
       path: '/terms',
