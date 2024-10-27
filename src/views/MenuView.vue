@@ -10,54 +10,54 @@ const pdfSrc = ref<null | string>(null);
 const hideButtons = ref(false);
 import { useRoute } from "vue-router";
 
-const showPdf = ref(true)
+const showPdf = ref(true);
 const route = useRoute();
 
-
 onMounted(() => {
-  showMenu(route.params.id);
+  showMenu(route.params.restaurantId);
 });
 
 watch(currentLanguage, () => {
-  let currentMenu = pdfSrc.value?.includes('washington') ? 'washington' : "bourdaloue"
+  let currentMenu = pdfSrc.value?.includes("washington")
+    ? "washington"
+    : "bourdaloue";
   if (pdfSrc.value) {
     if (currentLanguage.value === "fr") {
-      pdfSrc.value = currentMenu + '-fr'
-    } else {
-      pdfSrc.value = currentMenu + '-en'
+      pdfSrc.value = currentMenu + "-fr";
+    } 
+    if (currentLanguage.value === "en") {
+      pdfSrc.value = currentMenu + "-en";
     }
-
   }
 });
 
 const showMenu = (restaurant) => {
   if (restaurant === "1") {
     if (currentLanguage.value == "fr") {
-      pdfSrc.value = "washington-fr"
-      showPdf.value.false
+      pdfSrc.value = "bourdaloue-fr";
+      showPdf.value.false;
       setTimeout(() => {
-          showPdf.value = true
+        showPdf.value = true;
       }, 10);
     } else {
-      pdfSrc.value = "washington-en"
-      showPdf.value.false
+      pdfSrc.value = "bourdaloue-en";
+      showPdf.value.false;
       setTimeout(() => {
-          showPdf.value = true
+        showPdf.value = true;
       }, 10);
     }
-          
   } else {
     if (currentLanguage.value == "fr") {
-      pdfSrc.value = "bourdaloue-fr"
-      showPdf.value.false
+      pdfSrc.value = "washington-fr";
+      showPdf.value.false;
       setTimeout(() => {
-          showPdf.value = true
+        showPdf.value = true;
       }, 10);
     } else {
-      pdfSrc.value = "bourdaloue-en"
-      showPdf.value.false
+      pdfSrc.value = "washington-en";
+      showPdf.value.false;
       setTimeout(() => {
-          showPdf.value = true
+        showPdf.value = true;
       }, 10);
     }
   }
@@ -65,15 +65,29 @@ const showMenu = (restaurant) => {
 </script>
 
 <template>
-  <div class="w-full h-screen flex items-center justify-center bg">
-    <embed
-      class="w-full h-screen"
-      :src="`../../public/${pdfSrc}.pdf#toolbar=0&navpanes=0&view=FitH&zoom=page-fit`"
-      type="application/pdf"
-      width="100%"
-      height="100%"
-      v-if="showPdf"
+  <div class="w-full  flex items-center justify-center bg">
+
+    <img
+      class="w-full object-contain"
+      src="../assets/images/menus/bourdaloue-en.png"
+      v-if="pdfSrc === 'bourdaloue-en'"
     />
+    <img
+      class="w-full object-contain"
+      src="../assets/images/menus/bourdaloue-fr.png"
+      v-if="pdfSrc === 'bourdaloue-fr'"
+    />
+    <img
+      class="w-full object-contain"
+      src="../assets/images/menus/washington-en.png"
+      v-if="pdfSrc === 'washington-en'"
+    />
+    <img
+      class="w-full object-contain"
+      src="../assets/images/menus/washington-fr.png"
+      v-if="pdfSrc === 'washington-fr'"
+    />
+
     <!-- <iframe id="menu" :src="pdfSrc" frameborder="0" class="w-full h-screen" /> -->
   </div>
 </template>
