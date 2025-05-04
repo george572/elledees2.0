@@ -80,7 +80,8 @@ const redirectToMap = () => {
             <h2>{{ translations[currentLanguage].schedule.friday }}</h2>
           </div>
           <div>
-            <h2>11:30 - 15:00</h2>
+            <h2 class="whitespace-nowrap">11:30 - 15:00</h2>
+            <h2 class="whitespace-nowrap">18:30 - 22:15</h2>
           </div>
         </div>
       </div>
