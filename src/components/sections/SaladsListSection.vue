@@ -174,7 +174,7 @@ const saladsData = ref([
     name: "Tangerine Crunch",
     translationName : 'tangerineCrunch',
     sauceName: "VINAIGRETTE SUCRÉE AU SÉSAME",
-    sauceCalories: "268kcal",
+    sauceCalories: "268",
     ingredients: "clémentine, nouilles croustillantes, carottes râpées, avocat, tomates cerises, graines de sésame, mesclun, batavia",
     img: 'tangerineImg',
     showHover: false,
