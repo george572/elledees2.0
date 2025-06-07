@@ -24,7 +24,7 @@ watch(currentLanguage, () => {
   if (pdfSrc.value) {
     if (currentLanguage.value === "fr") {
       pdfSrc.value = currentMenu + "-fr";
-    } 
+    }
     if (currentLanguage.value === "en") {
       pdfSrc.value = currentMenu + "-en";
     }
@@ -46,7 +46,7 @@ const showMenu = (restaurant) => {
         showPdf.value = true;
       }, 10);
     }
-  } else {
+  } else if (restaurant === "2") {
     if (currentLanguage.value == "fr") {
       pdfSrc.value = "washington-fr";
       showPdf.value.false;
@@ -60,13 +60,26 @@ const showMenu = (restaurant) => {
         showPdf.value = true;
       }, 10);
     }
+  } else {
+    if (currentLanguage.value == "fr") {
+      pdfSrc.value = "neuilly-fr";
+      showPdf.value.false;
+      setTimeout(() => {
+        showPdf.value = true;
+      }, 10);
+    } else {
+      pdfSrc.value = "neuilly-en";
+      showPdf.value.false;
+      setTimeout(() => {
+        showPdf.value = true;
+      }, 10);
+    }
   }
 };
 </script>
 
 <template>
-  <div class="w-full  flex items-center justify-center bg">
-
+  <div class="w-full flex items-center justify-center bg">
     <img
       class="w-full object-contain"
       src="../assets/images/menus/bourdaloue-en.png"
@@ -86,6 +99,16 @@ const showMenu = (restaurant) => {
       class="w-full object-contain"
       src="../assets/images/menus/washington-fr.png"
       v-if="pdfSrc === 'washington-fr'"
+    />
+    <img
+      class="w-full object-contain"
+      src="../assets/images/menus/neuilly-en.png"
+      v-if="pdfSrc === 'neuilly-en'"
+    />
+    <img
+      class="w-full object-contain"
+      src="../assets/images/menus/neuilly-fr.png"
+      v-if="pdfSrc === 'neuilly-fr'"
     />
 
     <!-- <iframe id="menu" :src="pdfSrc" frameborder="0" class="w-full h-screen" /> -->

@@ -15,6 +15,7 @@ const { currentLanguage } = storeToRefs(store);
         <div class="flex flex-col gap-1">
           <span>1 RUE BOURDALOUE 75009 PARIS</span>
           <span>30 RUE WASHINGTON 75008 PARIS</span>
+          <span>151 avenue Charles de Gaulle 92200 Neuilly-Sur-Seine</span>
           <a href="mailto:HELLO@ELLEDEES.COM">HELLO@ELLEDEES.COM</a>
           <a href="tel:+33987373123">+33987373123</a>
           <router-link

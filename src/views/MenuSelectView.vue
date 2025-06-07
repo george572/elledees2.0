@@ -49,6 +49,14 @@ const goToMenu = (restaurant) => {
         <br />
         30 rue Washington 75008
       </div>
+      <div
+        class="max-w-[380px] w-full text-center cursor-pointer border bg-ed-yellow text-ed-red px-4 py-2 uppercase rounded-[54px] hover:bg-ed-pink hover:text-ed-red font-[Geomanist-Bold] md:text-[18px] transition-all duration-175"
+        @click="goToMenu('3')"
+      >
+        Elle&Dee’s - NEUILLY
+        <br />
+        151 avenue Charles de Gaulle 92200
+      </div>
     </div>
   </div>
 </template>

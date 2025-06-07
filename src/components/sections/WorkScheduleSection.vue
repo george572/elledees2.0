@@ -69,7 +69,7 @@ const redirectToMap = () => {
         <h2
           class="font-[Geomanist-Bold] mt-4 text-[20px] md:text-[45px] text-ed-red uppercase"
         >
-          Elle&Dee’s - Washington <br />
+          Washington <br />
           30 rue washington 75008
         </h2>
         <div
@@ -84,6 +84,25 @@ const redirectToMap = () => {
             <h2 class="whitespace-nowrap">18:30 - 22:15</h2>
           </div>
         </div>
+
+        <h2
+          class="font-[Geomanist-Bold] mt-4 text-[20px] md:text-[45px] text-ed-red uppercase"
+        >
+          NEUILLY <br />
+          151 avenue Charles de Gaulle 92200
+        </h2>
+        <div
+          class="flex items-center font-[Geomanist-Bold] text-[20px] md:text-[45px] text-ed-red uppercase justify-between w-full"
+        >
+          <div>
+            <h2>{{ translations[currentLanguage].schedule.fromMonday }}</h2>
+            <h2>{{ translations[currentLanguage].schedule.friday }}</h2>
+
+          </div>
+          <div>
+            <h2 class="whitespace-nowrap">11:30 - 15:00</h2>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -92,7 +111,6 @@ const redirectToMap = () => {
 <style scoped>
 .grid-bg {
   background-image: url("../../assets/images/grid.png");
-  background-size: 100%;
-  background-repeat: none;
+  background-size: contain;
 }
 </style>
