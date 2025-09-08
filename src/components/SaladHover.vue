@@ -27,14 +27,14 @@ const { currentLanguage } = storeToRefs(store);
       {{ data.name }}
     </h1>
     <p class="font-[Geomanist-Bold] text-[14px] sm:text-[25px] lg:text-[35px] text-center max-w-[457px]">
-      {{ data.sauceName }} ({{ data.sauceCalories + 'kcal' }})
+      {{ data.sauceName }}
     </p>
     <p class="font-[Geomanist-Bold] text-[12px] leading-[12px] sm:leading-[20px] sm:text-[16px] lg:text-[18px] text-center max-w-[320px]">
       {{ 
         translations[currentLanguage].salads[data.translationName].ingredients
       }}
     </p>
-    <div class="w-full font-[Geomanist-Bold] flex gap-2 sm:gap-10 justify-center mt-3 text-[12px] sm:text-[16px]">
+    <!-- <div class="w-full font-[Geomanist-Bold] flex gap-2 sm:gap-10 justify-center mt-3 text-[12px] sm:text-[16px]">
       <div class="text-center">
         <p>{{ translations[currentLanguage].salads.calories }}</p>
         {{ data.nutritionData.calories }}
@@ -51,6 +51,6 @@ const { currentLanguage } = storeToRefs(store);
         <p>{{ translations[currentLanguage].salads.Carbohydrates }}</p>
         {{ data.nutritionData.lipides }}
       </div>
-    </div>
+    </div> -->
   </div>
 </template>

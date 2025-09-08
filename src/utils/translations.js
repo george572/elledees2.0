@@ -16,7 +16,8 @@ export const translationsData = {
             text: "ELLE&DEE’S SALADS ARE PREPARED WITH FRESH AND FLAVORFUL INGREDIENTS THAT WILL SATISFY EVEN THE BIGGEST APPETITES. A WIDE SELECTION THAT WILL FULFILL ALL YOUR CRAVINGS OF FRESHNESS.",
             buttons: {
                 order: "Order",
-                menu: "Menu"
+                menu: "Menu",
+                nutritionalInfo: "Nutritional Infos"
             }
         },
         salads: {
@@ -56,6 +57,12 @@ export const translationsData = {
             },
             tangerineCrunch: {
                 ingredients: 'Clementines, crispy noodles, grated carrots, avocado, cherry tomatoes, sesame seeds, mesclun, batavia'
+            },
+            magicMike: {
+                ingredients: 'Honey-soy chicken, caramelized nuts, cherry tomatoes, goat cheese, roasted sweet potatoes, pickled onions, arugula, batavia'
+            },
+            seaSatin: {
+                ingredients: 'Half-cooked salmon, roasted sweet potatoes, bulgur, feta, red onions, croutons, dried cranberries, parsley, salad mix, batavia'
             }
         },
         mission: {
@@ -92,7 +99,8 @@ export const translationsData = {
             text: "ELLE & DEE’S CE SONT DES SALADES PRÉPARÉES À BASE D’INGRÉDIENTS FRAIS ET SAVOUREUX POUR RASSASIER MÊME LES PLUS GROSSES DALLES. UNE SÉLECTION PLÉTHORIQUE QUI SATISFERA TOUTES VOS ENVIES DE FRAÎCHEUR.",
             buttons: {
                 order: "COMMANDER",
-                menu: "Menu"
+                menu: "Menu",
+                nutritionalInfo: " informations nutritionnelles "
             }
         },
         salads: {
@@ -132,6 +140,12 @@ export const translationsData = {
             },
             tangerineCrunch: {
                 ingredients: 'clémentine, nouilles croustillantes, carottes râpées, avocat, tomates cerises, graines de sésame, mesclun, batavia'
+            },
+            magicMike: {
+                ingredients: 'Poulet miel-soja, noix caramélisées, tomates cerises, chèvre, patates douces rôties, oignons pickels, roquette, batavia '
+            },
+            seaSatin: {
+                ingredients: 'Saumon mi-cuit, patates douces rôties, boulgour, féta, oignons rouges, croûtons, canneberges séchées, persil, mesclun, batavia'
             }
         },
         mission: {

@@ -39,6 +39,13 @@ const navigateToClickAndCollect = () => {
       >
         {{ translations[currentLanguage].about.buttons.menu }} 
       </AppButton>
+      <AppButton
+        :additional-styles="'text-ed-pink border border-ed-pink'"
+        :outline="true"
+        @click="router.push('/nutrition-info')"
+      >
+        {{ translations[currentLanguage].about.buttons.nutritionalInfo }} 
+      </AppButton>
     </div>
   </div>
 </template>

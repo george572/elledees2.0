@@ -9,7 +9,7 @@ onMounted(() => {
 
 <template>
   <iframe
-    :src="'https://drive.google.com/file/d/1W7CDEXXUlOQJs6GV6qUzMf96edeCUsou/preview'"
+    :src="'https://drive.google.com/file/d/1bH3QPG-UpGQhlA76zpqtcVVBZrkjOOHo/preview'"
     frameborder="0"
     class="w-full h-screen"
   />

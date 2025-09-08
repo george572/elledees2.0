@@ -16,6 +16,8 @@ import veggiemadnessImg from "/src/assets/images/veggiemadness.webp";
 import wildstrawberryImg from "/src/assets/images/wildstrawberry.webp";
 import kitchenImage from "/src/assets/images/non10.JPG"
 import tangerineImg from "/src/assets/images/tangerine.webp"
+import magicmikeImg from "/src/assets/images/magic-mike.webp"
+import seaSatin from "/src/assets/images/sea-satin.webp"
 
 const loading = ref(true);
 const imagesLoaded = ref(0);
@@ -36,6 +38,8 @@ const assetsToLoad = ref([
   { tag : 'wildstrawberryImg', image : wildstrawberryImg },
   { tag : 'kitchenImg', image : kitchenImage },
   { tag : 'tangerineImg', image : tangerineImg },
+  { tag : 'magicmikeImg', image : magicmikeImg },
+  { tag : 'seaSatin', image : seaSatin },
 ]);
 
 const loadedImages = ref({
@@ -51,7 +55,9 @@ const loadedImages = ref({
   veggiemadnessImg: "",
   wildstrawberryImg: "",
   kitchenImg : "",
-  tangerineImg: "",
+  tangerineImg: "", 
+  magicmikeImg: "",
+  seaSatin: "",
 });
 
 const isWelcomeRoute = computed(() => {

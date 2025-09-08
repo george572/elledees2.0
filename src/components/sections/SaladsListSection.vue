@@ -9,32 +9,32 @@ const saladsData = ref([
     name: "Ave Cesar",
     translationName : 'aveCesar',
     sauceName: "Sauce César",
-    sauceCalories: "258",
+    sauceCalories: null,
     ingredients: "",
     img: 'avecesarImg',
     showHover: false,
     customClass: 'bg-ed-pink text-ed-yellow',
     nutritionData : {
-      calories: "647",
-      proteines: "48G",
-      glucides: "18G",
-      lipides: "37G"
+      calories: "868",
+      proteines: "59G",
+      glucides: "33G",
+      lipides: "65G"
     }
   },
   {
     name: "Habibi Yallah",
     translationName : 'habibi',
     sauceName: "Sauce curcuma-tahini",
-    sauceCalories: "230",
+    sauceCalories: null,
     ingredients: "Patates douces rôties, féta, tomates cerises, boulgour, pois chiches, oignons rouges, concombres, pitas croustillantes, menthe, persil, mesclun, batavia",
     img: 'habibiImg',
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow',
     nutritionData : {
-      calories: "470",
-      proteines: "19G",
-      glucides: "53G",
-      lipides: "14G"
+      calories: "527",
+      proteines: "21G",
+      glucides: "83G",
+      lipides: "12G"
     }
   },
   {
@@ -47,10 +47,10 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red',
     nutritionData : {
-      calories: "470",
-      proteines: "20G",
-      glucides: "21G",
-      lipides: "30G"
+      calories: "541",
+      proteines: "35G",
+      glucides: "36G",
+      lipides: "40G"
     }
 
   },
@@ -64,9 +64,9 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-pink text-ed-yellow',
     nutritionData : {
-      calories: "615",
-      proteines: "34G",
-      glucides: "51G",
+      calories: "624",
+      proteines: "36G",
+      glucides: "65G",
       lipides: "33G"
     }
   },
@@ -80,10 +80,10 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red',
     nutritionData : {
-      calories: "315",
-      proteines: "14G",
-      glucides: "43G",
-      lipides: "36g"
+      calories: "446",
+      proteines: "17G",
+      glucides: "59G",
+      lipides: "18g"
     }
   },
   {
@@ -96,10 +96,10 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-pink text-ed-yellow',
     nutritionData : {
-      calories: "590",
-      proteines: "33G",
-      glucides: "63G",
-      lipides: "27g"
+      calories: "608",
+      proteines: "40G",
+      glucides: "50G",
+      lipides: "36g"
     }
 
   } ,
@@ -113,10 +113,10 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red',
     nutritionData : {
-      calories: "588",
-      proteines: "24G",
-      glucides: "31G",
-      lipides: "38G"
+      calories: "514",
+      proteines: "20G",
+      glucides: "58G",
+      lipides: "32G"
     }
   },
   {
@@ -129,10 +129,10 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow',
     nutritionData : {
-      calories: "490",
-      proteines: "32G",
-      glucides: "45G",
-      lipides: "20g"
+      calories: "615",
+      proteines: "39G",
+      glucides: "41G",
+      lipides: "35g"
     }
 
   },
@@ -146,10 +146,10 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-yellow text-ed-red',
     nutritionData : {
-      calories: "185",
-      proteines: "15G",
+      calories: "249",
+      proteines: "18G",
       glucides: "21G",
-      lipides: "7g"
+      lipides: "12g"
     }
   },
   {
@@ -162,10 +162,10 @@ const saladsData = ref([
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow',
     nutritionData : {
-      calories: "450",
-      proteines: "18G",
-      glucides: "28G",
-      lipides: "26G"
+      calories: "407",
+      proteines: "19G",
+      glucides: "44G",
+      lipides: "27G"
     },
     season: "Summer"
 
@@ -173,17 +173,49 @@ const saladsData = ref([
   {
     name: "Tangerine Crunch",
     translationName : 'tangerineCrunch',
-    sauceName: "VINAIGRETTE SUCRÉE AU SÉSAME",
+    sauceName: "Vinaigrette sucrée au sésame",
     sauceCalories: "268",
     ingredients: "clémentine, nouilles croustillantes, carottes râpées, avocat, tomates cerises, graines de sésame, mesclun, batavia",
     img: 'tangerineImg',
     showHover: false,
     customClass: 'bg-ed-green text-ed-yellow',
     nutritionData : {
-      calories: "213",
-      proteines: "23,1G",
-      glucides: "7,1G",
-      lipides: "11,8G"
+      calories: "329",
+      proteines: "9G",
+      glucides: "38G",
+      lipides: "26G"
+    },
+  },
+  {
+    name: "Magic Mike",
+    translationName : 'magicMike',
+    sauceName: "Sauce déesse verte",
+    sauceCalories: "268",
+    ingredients: "Poulet miel-soja, noix caramélisées, tomates cerises, chèvre, patates douces rôties, oignons pickels, roquette, batavia ",
+    img: 'magicmikeImg',
+    showHover: false,
+    customClass: 'bg-ed-green text-ed-yellow',
+    nutritionData : {
+      calories: "499",
+      proteines: "37G",
+      glucides: "31G",
+      lipides: "26G"
+    },
+  },
+  {
+    name: "Sea Satin",
+    translationName : 'seaSatin',
+    sauceName: "Sauce tamari",
+    sauceCalories: "268",
+    ingredients: "Poulet miel-soja, noix caramélisées, tomates cerises, chèvre, patates douces rôties, oignons pickels, roquette, batavia ",
+    img: 'seaSatin',
+    showHover: false,
+    customClass: 'bg-ed-green text-ed-yellow',
+    nutritionData : {
+      calories: "600",
+      proteines: "33G",
+      glucides: "65G",
+      lipides: "23G"
     },
   },
 ]);
