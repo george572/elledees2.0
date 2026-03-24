@@ -69,7 +69,7 @@ const navigateTo = (route) => {
         <AppButton
           :additional-styles="'text-white hover:bg-transparent hover:border hover:border-ed-green hover:text-ed-green bg-ed-green'"
         >
-          Deliveroo
+          DELIVERY
         </AppButton>
       </a>
       <AppButton

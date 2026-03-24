@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Cardinal;
+  src: url('/fonts/VCCardinal-ExtraBold-Trial.otf') format('opentype');
+}
+
+@font-face {
+  font-family: Geomanist-Bold;
+  src: url('/fonts/geomanist-bold-webfont.ttf') format('truetype');
+}
+
+/* Burger menu icon */
+.nav-burger-menu {
+  width: 30px;
+  height: 22px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.nav-burger-menu span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #2DA954;
+  border-radius: 2px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+.nav-burger-menu span:nth-child(1) { top: 0; }
+.nav-burger-menu span:nth-child(2),
+.nav-burger-menu span:nth-child(3) { top: 9px; }
+.nav-burger-menu span:nth-child(4) { top: 18px; }
+.nav-burger-menu.open span:nth-child(1) {
+  top: 9px;
+  width: 0;
+  left: 50%;
+}
+.nav-burger-menu.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+.nav-burger-menu.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+.nav-burger-menu.open span:nth-child(4) {
+  top: 9px;
+  width: 0;
+  left: 50%;
+}
+
+/* Mobile nav open state */
+#mobile-nav.open {
+  width: 100% !important;
+}
+
+/* Menu tabs */
+.menu-tab {
+  font-family: 'Geomanist-Bold', system-ui, sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  border: 2px solid rgba(226, 55, 52, 0.2);
+  color: rgba(226, 55, 52, 0.6);
+  background: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+@media (min-width: 768px) {
+  .menu-tab { font-size: 12px; padding: 10px 24px; }
+}
+.menu-tab.active {
+  background-color: #E23734;
+  color: #fff;
+  border-color: #E23734;
+}
+.menu-tab:hover:not(.active) {
+  border-color: rgba(226, 55, 52, 0.5);
+  color: #E23734;
+}
+
+/* Location chips */
+.location-chip {
+  font-family: 'Geomanist-Bold', system-ui, sans-serif;
+  text-transform: uppercase;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  border: 2px solid rgba(226, 55, 52, 0.2);
+  color: rgba(226, 55, 52, 0.6);
+  background: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.2s;
+  line-height: 1.4;
+}
+@media (min-width: 768px) {
+  .location-chip { font-size: 12px; padding: 10px 24px; }
+}
+.location-chip.active {
+  background-color: #E23734;
+  color: #fff;
+  border-color: #E23734;
+}
+.location-chip:hover:not(.active) {
+  border-color: rgba(226, 55, 52, 0.5);
+  color: #E23734;
+}
+
+/* Menu panels */
+.menu-panel { display: none; }
+.menu-panel.active { display: block; animation: menuFadeIn 0.3s ease; }
+@keyframes menuFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Menu item rows */
+.menu-item {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Dietary badges */
+.diet-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 9999px;
+  font-size: 8px;
+  font-family: 'Geomanist-Bold', system-ui, sans-serif;
+  line-height: 1;
+  padding: 0 5px;
+}
+
+/* Add-on row */
+.addon-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(45, 169, 84, 0.06);
+}
+.addon-row:last-child { border-bottom: none; }
+
+/* Scrollbar hide */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }

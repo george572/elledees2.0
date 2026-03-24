@@ -35,7 +35,7 @@ const navigateToClickAndCollect = () => {
       <AppButton
         :additional-styles="'text-ed-pink border border-ed-pink'"
         :outline="true"
-        @click="router.push('/menu')"
+        @click="router.push('/menu-select')"
       >
         {{ translations[currentLanguage].about.buttons.menu }} 
       </AppButton>

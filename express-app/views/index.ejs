@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elle&Dee's</title>
+  <link href="/css/output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen">
+  <!-- Header: Desktop -->
+  <header class="hidden md:flex gap-6 lg:gap-8 items-center justify-center py-6 mx-auto sticky top-0 z-40 bg-white h-[84px]">
+    <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-geomanist-bold uppercase text-ed-green text-[14px] lg:text-[19px] transition-colors hover:text-ed-yellow cursor-pointer translate-y-0.5">Click & Collect</a>
+    <a href="#menu" class="font-geomanist-bold uppercase text-ed-green text-[14px] lg:text-[19px] transition-colors hover:text-ed-yellow cursor-pointer translate-y-0.5">Menu</a>
+    <a href="#hero" class="flex-shrink-0">
+      <img src="/images/logo.svg" alt="Elle&amp;Dee's" class="w-[180px] lg:w-[220px] h-auto">
+    </a>
+    <a href="#aboutus" class="font-geomanist-bold uppercase text-ed-green text-[14px] lg:text-[19px] transition-colors hover:text-ed-yellow cursor-pointer translate-y-0.5">About Us</a>
+    <a href="#contact" class="font-geomanist-bold uppercase text-ed-green text-[14px] lg:text-[19px] transition-colors hover:text-ed-yellow cursor-pointer translate-y-0.5">Contact</a>
+    <div class="absolute right-8 lg:right-12 flex items-center gap-1 font-geomanist-bold text-ed-green text-[14px] lg:text-[19px] uppercase">
+      <span id="lang-display">EN</span>
+      <button type="button" id="lang-toggle" aria-label="Toggle language" class="p-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6" /></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Header: Mobile -->
+  <header class="sticky top-0 z-50 flex items-center justify-between px-4 py-4 bg-white md:hidden">
+    <a href="#hero">
+      <img src="/images/logo.svg" alt="Elle&amp;Dee's" class="w-[150px] sm:w-[180px] h-auto cursor-pointer">
+    </a>
+    <div class="flex items-center gap-3">
+      <div class="font-geomanist-bold text-ed-green text-[14px] uppercase"><span id="lang-display-mob">EN</span></div>
+      <button type="button" id="burger-btn" class="nav-burger-menu focus:outline-none" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile slide-out menu -->
+    <div id="mobile-nav" class="fixed left-0 top-[56px] z-30 w-0 overflow-x-hidden h-[calc(100vh-56px)] bg-ed-green flex flex-col justify-center items-center gap-8 transition-[width] duration-300 ease-out md:hidden">
+      <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="mobile-nav-link font-geomanist-bold uppercase text-ed-yellow text-[26px] sm:text-[30px] whitespace-nowrap hover:text-white transition-colors">Click & Collect</a>
+      <a href="#menu" class="mobile-nav-link font-geomanist-bold uppercase text-ed-yellow text-[26px] sm:text-[30px] whitespace-nowrap hover:text-white transition-colors">Menu</a>
+      <a href="#aboutus" class="mobile-nav-link font-geomanist-bold uppercase text-ed-yellow text-[26px] sm:text-[30px] whitespace-nowrap hover:text-white transition-colors">About Us</a>
+      <a href="#contact" class="mobile-nav-link font-geomanist-bold uppercase text-ed-yellow text-[26px] sm:text-[30px] whitespace-nowrap hover:text-white transition-colors">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero section -->
+  <section
+    id="hero"
+    class="relative w-full min-h-[70vh] md:min-h-screen py-20 md:py-0"
+  >
+    <img
+      src="/images/hero.webp"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 bg-black/20" aria-hidden="true"></div>
+    <div class="relative z-10 flex flex-col items-center justify-center h-full min-h-[70vh] md:min-h-screen gap-5 px-5">
+      <h1 class="font-cardinal text-[60px] text-center xl:text-left md:text-[130px] xl:text-[130px] mx-auto text-white leading-[50px] md:leading-[110px] xl:leading-[110px] uppercase max-w-[980px] mb-12 md:mb-20">
+        Massively healthy & incredibly fresh
+      </h1>
+      <a
+        href="https://elledees.zelty-order.fr/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-[175px] h-[47px] md:w-[275px] md:h-[57px] flex items-center justify-center text-ed-green bg-white text-[12px] md:text-[18px] font-semibold uppercase rounded-[54px] hover:bg-ed-pink hover:text-ed-red transition-all duration-175"
+      >
+        Click & Collect
+      </a>
+    </div>
+  </section>
+
+  <!-- Tagline -->
+  <section class="bg-ed-beige py-7 px-6 md:px-10 max-w-[97%] mt-7 mx-auto rounded-3xl" aria-label="Our concept">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-cardinal text-ed-red text-[28px] md:text-[38px] lg:text-[44px] leading-tight">
+        Ultra-gourmet salads, 100% homemade
+      </p>
+      <p class="mt-3 md:mt-4 font-geomanist-bold text-ed-green text-[14px] md:text-[16px] uppercase tracking-[0.2em]">
+        Made with top-quality ingredients
+      </p>
+      <div class="w-16 h-[3px] bg-ed-red/40 mx-auto mt-6 md:mt-8"></div>
+    </div>
+  </section>
+
+  <!-- Salads of the Day -->
+  <section id="salads" class="py-7 md:py-7 px-2">
+    <div class="w-[98%] mx-auto bg-ed-beige rounded-3xl px-5 md:px-10 lg:px-14 py-16 md:py-20">
+      <!-- Section header -->
+      <div class="bg-ed-beige rounded-2xl px-6 py-8 md:px-10 md:py-10 text-center mb-14 md:mb-20">
+        <span class="font-geomanist-bold uppercase text-ed-red text-[11px] md:text-[13px] tracking-[0.25em]">Our Selection</span>
+        <h2 class="font-cardinal text-ed-red text-[42px] md:text-[64px] leading-[1.1] mt-2">Salads of the Day</h2>
+        <div class="w-12 h-[3px] bg-ed-red/30 mx-auto mt-5"></div>
+      </div>
+
+      <!-- Salads grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
+
+        <!-- Salad 1 -->
+        <div class="salad-card">
+          <div class="aspect-[4/3] overflow-hidden rounded-2xl">
+            <img src="/images/amore-mio.webp" alt="Mediterranean Bowl" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 relative overflow-hidden min-h-[240px]">
+            <div>
+              <h3 class="font-cardinal text-ed-dark text-[22px] md:text-[24px] leading-tight">Mediterranean Bowl</h3>
+              <p class="text-[14px] text-ed-dark/60 mt-3 leading-relaxed">A sun-kissed blend of ancient grains, creamy feta, and crisp vegetables with herb vinaigrette.</p>
+              <p class="font-cardinal text-ed-green text-[20px] mt-4">14.90&euro;</p>
+              <div class="flex gap-3 mt-4">
+                <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="flex-1 h-[40px] flex items-center justify-center bg-ed-green text-white text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/90 transition-colors">Order</a>
+                <button type="button" onclick="toggleNutrition(this)" class="flex-1 h-[40px] flex items-center justify-center border-2 border-ed-green text-ed-green text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/5 transition-colors">Nutrition Info</button>
+              </div>
+            </div>
+            <div class="nutrition-panel absolute inset-0 bg-ed-beige rounded-xl p-5 pt-0 md:p-6 md:pt-0 translate-y-full transition-transform duration-300 ease-out flex flex-col">
+              <h4 class="font-cardinal text-ed-dark text-[18px] mb-3">Nutrition Info</h4>
+              <div class="space-y-1.5 text-[13px] text-ed-dark/70 font-geomanist-bold">
+                <div class="flex justify-between"><span>Calories</span><span>420 kcal</span></div>
+                <div class="flex justify-between"><span>Protein</span><span>18g</span></div>
+                <div class="flex justify-between"><span>Carbs</span><span>42g</span></div>
+                <div class="flex justify-between"><span>Fat</span><span>22g</span></div>
+                <div class="flex justify-between"><span>Fiber</span><span>8g</span></div>
+              </div>
+              <button type="button" onclick="toggleNutrition(this)" class="mt-auto h-[40px] flex items-center justify-center border-2 border-ed-green text-ed-green text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/5 transition-colors min-h-[40px]">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salad 2 -->
+        <div class="salad-card">
+          <div class="aspect-[4/3] overflow-hidden rounded-2xl relative">
+            <div class="absolute top-4 left-4 z-10 bg-ed-red text-ed-beige font-geomanist-bold text-[10px] md:text-[11px] uppercase tracking-[0.15em] px-3 py-1 rounded-full">Chef&rsquo;s Pick</div>
+            <img src="/images/ave-cesar.webp" alt="Avocado Royale" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 relative overflow-hidden min-h-[240px]">
+            <div>
+              <h3 class="font-cardinal text-ed-dark text-[22px] md:text-[26px] leading-tight">Avocado Royale</h3>
+              <p class="text-[14px] text-ed-dark/60 mt-3 leading-relaxed">Silky avocado on a bed of tender kale, crowned with pomegranate jewels and toasted seeds.</p>
+              <p class="font-cardinal text-ed-green text-[20px] md:text-[22px] mt-4">16.90&euro;</p>
+              <div class="flex gap-3 mt-4">
+                <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="flex-1 h-[40px] flex items-center justify-center bg-ed-green text-white text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/90 transition-colors">Order</a>
+                <button type="button" onclick="toggleNutrition(this)" class="flex-1 h-[40px] flex items-center justify-center border-2 border-ed-green text-ed-green text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/5 transition-colors">Nutrition Info</button>
+              </div>
+            </div>
+            <div class="nutrition-panel absolute inset-0 bg-ed-beige rounded-xl p-5 pt-0 md:p-6 md:pt-0 translate-y-full transition-transform duration-300 ease-out flex flex-col">
+              <h4 class="font-cardinal text-ed-dark text-[18px] mb-3">Nutrition Info</h4>
+              <div class="space-y-1.5 text-[13px] text-ed-dark/70 font-geomanist-bold">
+                <div class="flex justify-between"><span>Calories</span><span>480 kcal</span></div>
+                <div class="flex justify-between"><span>Protein</span><span>14g</span></div>
+                <div class="flex justify-between"><span>Carbs</span><span>36g</span></div>
+                <div class="flex justify-between"><span>Fat</span><span>28g</span></div>
+                <div class="flex justify-between"><span>Fiber</span><span>12g</span></div>
+              </div>
+              <button type="button" onclick="toggleNutrition(this)" class="mt-auto h-[40px] flex items-center justify-center border-2 border-ed-green text-ed-green text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/5 transition-colors min-h-[40px]">Close</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Salad 3 -->
+        <div class="salad-card">
+          <div class="aspect-[4/3] overflow-hidden rounded-2xl">
+            <img src="/images/big-crispy.webp" alt="Caesar Reimagined" class="w-full h-full object-cover">
+          </div>
+          <div class="mt-4 relative overflow-hidden min-h-[240px]">
+            <div>
+              <h3 class="font-cardinal text-ed-dark text-[22px] md:text-[24px] leading-tight">Caesar Reimagined</h3>
+              <p class="text-[14px] text-ed-dark/60 mt-3 leading-relaxed">The timeless classic, elevated with shaved parmesan, house-made croutons, and a bold anchovy dressing.</p>
+              <p class="font-cardinal text-ed-green text-[20px] mt-4">13.50&euro;</p>
+              <div class="flex gap-3 mt-4">
+                <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="flex-1 h-[40px] flex items-center justify-center bg-ed-green text-white text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/90 transition-colors">Order</a>
+                <button type="button" onclick="toggleNutrition(this)" class="flex-1 h-[40px] flex items-center justify-center border-2 border-ed-green text-ed-green text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/5 transition-colors">Nutrition Info</button>
+              </div>
+            </div>
+            <div class="nutrition-panel absolute inset-0 bg-ed-beige rounded-xl p-5 pt-0 md:p-6 md:pt-0 translate-y-full transition-transform duration-300 ease-out flex flex-col">
+              <h4 class="font-cardinal text-ed-dark text-[18px] mb-3">Nutrition Info</h4>
+              <div class="space-y-1.5 text-[13px] text-ed-dark/70 font-geomanist-bold">
+                <div class="flex justify-between"><span>Calories</span><span>380 kcal</span></div>
+                <div class="flex justify-between"><span>Protein</span><span>22g</span></div>
+                <div class="flex justify-between"><span>Carbs</span><span>28g</span></div>
+                <div class="flex justify-between"><span>Fat</span><span>18g</span></div>
+                <div class="flex justify-between"><span>Fiber</span><span>6g</span></div>
+              </div>
+              <button type="button" onclick="toggleNutrition(this)" class="mt-auto h-[40px] flex items-center justify-center border-2 border-ed-green text-ed-green text-[12px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/5 transition-colors min-h-[40px]">Close</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Menu -->
+  <section id="menu" class="bg-white py-16 md:py-7 px-2">
+    <div class="w-[98%] mx-auto bg-ed-beige rounded-3xl shadow-xl px-5 md:px-10 lg:px-14 py-16 md:py-20">
+
+      <!-- Section header -->
+      <div class="text-center mb-10">
+        <span class="font-geomanist-bold uppercase text-ed-red text-[11px] md:text-[13px] tracking-[0.25em]">Explore</span>
+        <h2 class="font-cardinal text-ed-red text-[48px] md:text-[72px] leading-[1] mt-2 uppercase">Our Menu</h2>
+        <div class="w-12 h-[3px] bg-ed-red/30 mx-auto mt-5"></div>
+      </div>
+
+      <!-- Location chips -->
+       <div class="flex flex-col items-center">
+         <span class="font-geomanist-bold uppercase text-ed-red text-[11px] md:text-[13px] tracking-[0.25em] block mb-2">locations</span>
+         <p class="text-ed-red text-[12px] md:text-[14px] leading-relaxed mb-4 font-geomanist-bold tracking-[0.09em]">( Menus differ based on location )</p>
+         <div class="flex flex-col md:flex-row overflow-x-auto gap-2 md:gap-3 justify-start md:justify-center mb-8 md:mb-10 pb-1 scrollbar-hide">
+           <button class="location-chip active" onclick="switchLocation(this)">Elle&amp;Dee&rsquo;s &mdash; Notre-Dame-de-Lorette<br><span class="text-[9px] md:text-[10px] opacity-70">1 rue Bourdaloue 75009</span></button>
+           <button class="location-chip" onclick="switchLocation(this)">Elle&amp;Dee&rsquo;s &mdash; Washington<br><span class="text-[9px] md:text-[10px] opacity-70">30 rue Washington 75008</span></button>
+           <button class="location-chip" onclick="switchLocation(this)">Elle&amp;Dee&rsquo;s &mdash; Neuilly<br><span class="text-[9px] md:text-[10px] opacity-70">151 avenue Charles de Gaulle 92200</span></button>
+         </div>
+       </div>
+
+      <!-- Tab navigation -->
+      <div class="flex overflow-x-auto gap-2 md:gap-3 justify-start md:justify-center mb-10 md:mb-10 mt-10 pb-1 scrollbar-hide">
+        <button data-tab="signature" class="menu-tab active" onclick="switchMenuTab('signature')">Signature Salads</button>
+        <button data-tab="baby" class="menu-tab" onclick="switchMenuTab('baby')">Baby Salads</button>
+        <button data-tab="soups" class="menu-tab" onclick="switchMenuTab('soups')">Soups</button>
+        <button data-tab="drinks" class="menu-tab" onclick="switchMenuTab('drinks')">Drinks</button>
+        <button data-tab="sweets" class="menu-tab" onclick="switchMenuTab('sweets')">Sweets</button>
+      </div>
+
+      <!-- ==================== SIGNATURE SALADS ==================== -->
+      <div id="panel-signature" class="menu-panel active">
+        <div class="flex items-center gap-3 mb-8">
+          <h3 class="font-cardinal text-ed-red text-[30px] md:text-[120px] uppercase leading-[1]">Signature Salads</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-16 md:gap-y-10">
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="ave-cesar" data-price="15.90">AVE <br/> CESAR</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">15.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Caesar Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Roasted white sweet potato, parmesan, avocado, crispy bacon, cherry tomatoes, crispy pitas, spring onions, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="tangerine-crunch" data-price="14.90">Tangerine <br/> Crunch</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">14.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Sweet-Sesame Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Clementine, edamame, crispy chickpeas, carrots, avocado, cherry tomatoes, sesame seeds, mesclun, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="big-crispy" data-price="15.90">Big <br/> Crispy</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">15.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Honey-Mustard Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Quinoa, avocado, roasted crispy chicken breast, candied tomatoes, crispy onion, baby spinach, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="super-sour" data-price="13.90">Super <br/> Sour</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">13.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Honey-Mustard Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Avocado, raw broccoli florets, sun-dried tomatoes, crispy pitas, sunflower seeds, arugula, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="mexican-dream" data-price="14.90">Mexican <br/> Dream</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">14.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Cilantro-Cumin Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Roasted chicken breast, cheddar, avocado, red kidney beans, corn, red peppers, cilantro, tortilla, mesclun, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="amore-mio" data-price="14.90">Amore <br/> Mio</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">14.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Pesto Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Penne, cucumbers, candied tomatoes, feta, olives, red onion, pine nuts, arugula, mesclun</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="buffalo-bill" data-price="15.90">Buffalo <br/> Bill</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">15.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Ranch Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Crispy bacon, hard-boiled egg, blue cheese, cherry tomatoes, avocado, red onion, crispy pitas, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="veggie-madness" data-price="14.90">Veggie <br/> Madness</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">14.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Tamari Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Roasted marinated tofu, cucumbers, shredded carrots, raw broccoli, edamame, red cabbage, red onion, sesame seeds, mesclun, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="french-riviera" data-price="15.90">French <br/> Riviera</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">15.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Lemon-Olive Oil Vinaigrette</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Half-cooked salmon, rice, hard-boiled egg, mozzarella, cherry tomatoes, batavia</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="habibi-yallah" data-price="13.90">Habibi <br/> Yallah</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">13.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Turmeric-Tahini Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Roasted white potato, crispy chickpeas, pomegranate, bulgur, red onions, cucumber, crispy pita, mint, parsley, mesclun, batavia</p>
+          </div>
+
+        </div>
+
+        <!-- Add-Ons -->
+        <div class="mt-12 pt-10 border-t-2 border-dashed border-ed-green/15">
+          <div class="flex items-center gap-3 mb-6">
+            <h3 class="font-cardinal text-ed-red text-[26px] md:text-[34px] uppercase leading-[1]">Add-Ons</h3>
+            <div class="flex-1 h-px bg-ed-red/15"></div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12">
+            <div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Crispy Pitas</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 0.75 &middot; <span class="text-ed-dark/30">L</span> 1.50
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Bread Croutons</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 0.75 &middot; <span class="text-ed-dark/30">L</span> 1.50
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Crispy Chickpeas</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 0.75 &middot; <span class="text-ed-dark/30">L</span> 1.50
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Avocado</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 1.00 &middot; <span class="text-ed-dark/30">L</span> 2.00
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Hard Boiled Egg</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 1.00 &middot; <span class="text-ed-dark/30">L</span> 2.00
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Crispy Bacon</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 1.50 &middot; <span class="text-ed-dark/30">L</span> 3.00
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Roasted Chicken</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 2.50 &middot; <span class="text-ed-dark/30">L</span> 5.00
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Marinated Tofu</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 2.50 &middot; <span class="text-ed-dark/30">L</span> 5.00
+                </span>
+              </div>
+            </div>
+            <div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Half-Cooked Salmon</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 3.50 &middot; <span class="text-ed-dark/30">L</span> 7.00
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Parmesan</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 0.50 &middot; <span class="text-ed-dark/30">L</span> 1.00
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Mozzarella</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 1.00 &middot; <span class="text-ed-dark/30">L</span> 1.80
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Feta with Herbs</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 1.00 &middot; <span class="text-ed-dark/30">L</span> 1.80
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Shredded Cheddar</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 0.50 &middot; <span class="text-ed-dark/30">L</span> 1.00
+                </span>
+              </div>
+              <div class="addon-row">
+                <span class="text-[13px] text-ed-dark/70">Blue Cheese</span>
+                <span class="font-geomanist-bold text-ed-dark/50 text-[12px]">
+                  <span class="text-ed-dark/30">S</span> 0.50 &middot; <span class="text-ed-dark/30">L</span> 1.00
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-[10px] text-ed-dark/30 mt-4 font-geomanist-bold uppercase tracking-wider">S = 17 oz (Baby) &middot; L = 50 oz (Signature)</p>
+        </div>
+      </div>
+
+      <!-- ==================== BABY SALADS ==================== -->
+      <div id="panel-baby" class="menu-panel">
+        <div class="flex items-center gap-3 mb-8">
+          <h3 class="font-cardinal text-ed-red text-[30px] md:text-[120px] uppercase leading-[1]">Baby Salads</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-16 md:gap-y-10">
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="dolce-vita" data-price="6.90">Dolce <br/> Vita</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">6.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Pesto Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Penne, cucumbers, candied tomatoes, feta, olives, red onion, pine nuts, arugula</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="oriental-garden" data-price="6.90">Oriental <br/> Garden</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">6.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Turmeric-Tahini Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Bulgur, chickpeas, cucumbers, feta, red pepper, red onion, mint, parsley</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <button type="button" class="salad-name-btn text-left font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors cursor-pointer bg-transparent border-none p-0" data-salad-id="baby-crispy" data-price="7.90">Baby <br/> Crispy</button>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">7.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Honey-Mustard Dressing</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Quinoa, avocado, roasted crispy chicken breast, crispy onion, baby spinach</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SOUPS ==================== -->
+      <div id="panel-soups" class="menu-panel">
+        <div class="flex items-center gap-3 mb-8">
+          <h3 class="font-cardinal text-ed-red text-[30px] md:text-[120px] uppercase leading-[1]">Soups</h3>
+        </div>
+        <p class="text-[12px] text-ed-dark/40 font-geomanist-bold uppercase tracking-wider mb-8">Each soup is served with a country-style bread</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-16 md:gap-y-10">
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Lentil <br/> Crush</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">6.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">12oz / 26oz</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Vegetable broth, lentils, chickpeas, red peppers, rice, peanut butter, cilantro and roasted peanuts</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Creamy <br/> Butternut</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">5.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">12oz / 26oz</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Butternut squash velout&eacute;, carrots and yam potatoes</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Chicken <br/> Soup</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">6.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">12oz / 26oz</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Chicken broth, vermicelli, chicken, carrots and celery</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== DRINKS ==================== -->
+      <div id="panel-drinks" class="menu-panel">
+        <div class="flex items-center gap-3 mb-8">
+          <h3 class="font-cardinal text-ed-red text-[30px] md:text-[120px] uppercase leading-[1]">Drinks</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-16 md:gap-y-10">
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Bone <br/> Broth</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">5.50</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">230ml</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Beef &amp; chicken bone broth, rich in protein and collagen</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Jomo</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">3.50</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">350ml</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Peach-Hibiscus, Passion-Lime, Mint-Lemon-Ginger</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Cold <br/> Drinks</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">2.50</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">500ml</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Evian, San Pellegrino, Coca-Cola Original / Zero</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Douze <br/> Drinks</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">3.50</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">250ml</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Apricot-Zaatar, Pear-Anise</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Juices</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">3.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">240ml</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Carrot-Apple-Pineapple-Lemon, Strawberry-Raspberry-Blossom, Apple-Cucumber-Spinach-Kale</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Energy <br/> Shots</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">2.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SWEETS ==================== -->
+      <div id="panel-sweets" class="menu-panel">
+        <div class="flex items-center gap-3 mb-8">
+          <h3 class="font-cardinal text-ed-red text-[30px] md:text-[120px] uppercase leading-[1]">Sweets</h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-x-16 md:gap-y-10">
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Cottage <br/> Cheese</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">4.50</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Granola</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Cottage cheese 3% fat, agave syrup, granola</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <a href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px] hover:text-ed-yellow transition-colors">Chia <br/> Pudding</a>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">4.90</span>
+            </div>
+            <p class="text-[18px] font-geomanist-bold tracking-wider text-ed-dark mt-1 uppercase">Vegan</p>
+            <p class="text-[12px] text-ed-dark mt-1.5 leading-relaxed uppercase font-geomanist-bold">Chia seeds mixed with a vegan coconut dessert, mango coulis and passion fruit</p>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <h4 class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px]">Cookie</h4>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">3.90</span>
+            </div>
+          </div>
+
+          <div class="menu-item">
+            <div class="flex items-baseline justify-between gap-2">
+              <h4 class="font-cardinal text-ed-green text-[20px] md:text-[48px] uppercase leading-[22px] md:leading-[40px]">Brownie</h4>
+              <span class="font-cardinal text-ed-green text-[18px] md:text-[48px]">4.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center text-[10px] text-ed-dark/25 mt-6 font-geomanist-bold uppercase tracking-wider">All our prices are in euros &amp; include VAT and service.</p>
+
+    </div>
+  </section>
+
+  <!-- Placeholder sections for anchor links -->
+  <section id="aboutus" class="min-h-[50vh] bg-ed-beige flex items-center justify-center px-5 py-20">
+    <p class="font-geomanist-bold text-ed-green text-xl md:text-2xl text-center uppercase">Ingredients origin info </p>
+  </section>
+  <section id="contact" class="min-h-[50vh] bg-white flex items-center justify-center px-5 py-20">
+    <p class="font-geomanist-bold text-ed-green text-xl md:text-2xl text-center uppercase">Contact — section placeholder</p>
+  </section>
+
+  <style>
+    #salad-sheet { height: 72vh; }
+    @media (max-width: 767px) {
+      #salad-sheet { height: 58vh; max-height: 420px; }
+    }
+  </style>
+  <!-- Salad detail bottom sheet - must be last in body for stacking -->
+  <div id="salad-sheet-backdrop" role="button" tabindex="-1" aria-label="Close" class="fixed inset-0 bg-black/50 cursor-pointer" aria-hidden="true" style="z-index: 99998; opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;"></div>
+  <div id="salad-sheet" class="fixed left-0 right-0 rounded-t-3xl bg-ed-beige shadow-2xl flex flex-col overflow-hidden md:overflow-y-auto" style="z-index: 99999; bottom: -100vh; transition: bottom 0.3s ease-out;">
+    <div class="flex-shrink-0 flex items-center justify-center pt-2 pb-0.5 md:pt-3 md:pb-1">
+      <span class="w-10 h-0.5 md:w-12 md:h-1 rounded-full bg-ed-dark/20"></span>
+    </div>
+    <div class="flex-1 min-h-0 overflow-y-auto overflow-x-hidden px-4 pb-4 md:px-8 md:pb-6">
+      <div class="flex flex-col md:flex-row gap-3 md:gap-8">
+        <div class="flex-shrink-0 w-full md:w-[280px] h-40 aspect-[3/1] md:aspect-[4/3] md:h-auto rounded-xl md:rounded-2xl overflow-hidden bg-ed-dark/5">
+          <img id="salad-sheet-image" src="" alt="" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-1 min-w-0 flex flex-col gap-0 md:gap-0">
+          <div class="flex items-baseline justify-between gap-2">
+            <h3 id="salad-sheet-title" class="font-cardinal text-ed-dark text-[20px] md:text-[28px] leading-tight"></h3>
+            <p id="salad-sheet-price" class="font-cardinal text-ed-green text-[18px] md:text-[20px] flex-shrink-0"></p>
+          </div>
+          <h4 class="font-cardinal text-ed-dark text-[13px] md:text-[16px] mt-2 md:mt-4 mb-1 md:mb-2">Nutrition Info</h4>
+          <div id="salad-sheet-nutrition" class="grid grid-cols-2 md:grid-cols-1 gap-x-4 gap-y-0.5 md:gap-y-1.5 text-[12px] md:text-[14px] text-ed-dark/70 font-geomanist-bold md:space-y-0">
+            <!-- filled by JS -->
+          </div>
+          <a id="salad-sheet-order" href="https://elledees.zelty-order.fr/" target="_blank" rel="noopener noreferrer" class="mt-3 md:mt-6 inline-flex h-[40px] md:h-[44px] items-center justify-center px-6 md:px-8 bg-ed-green text-white text-[12px] md:text-[13px] font-geomanist-bold uppercase tracking-wide rounded-full hover:bg-ed-green/90 transition-colors flex-shrink-0">Order</a>
+        </div>
+      </div>
+    </div>
+    <button type="button" id="salad-sheet-close" class="absolute top-2 right-3 md:top-3 md:right-4 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-ed-dark/10 text-ed-dark hover:bg-ed-dark/20 transition-colors" aria-label="Close">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <script>
+    var SALAD_DATA = {
+      'ave-cesar': { image: '/images/ave-cesar.webp', name: 'Ave Cesar', nutrition: { calories: '480 kcal', protein: '14g', carbs: '36g', fat: '28g', fiber: '12g' } },
+      'tangerine-crunch': { image: '/images/amore-mio.webp', name: 'Tangerine Crunch', nutrition: { calories: '450 kcal', protein: '16g', carbs: '40g', fat: '24g', fiber: '10g' } },
+      'big-crispy': { image: '/images/big-crispy.webp', name: 'Big Crispy', nutrition: { calories: '380 kcal', protein: '22g', carbs: '28g', fat: '18g', fiber: '6g' } },
+      'super-sour': { image: '/images/amore-mio.webp', name: 'Super Sour', nutrition: { calories: '410 kcal', protein: '15g', carbs: '35g', fat: '24g', fiber: '9g' } },
+      'mexican-dream': { image: '/images/amore-mio.webp', name: 'Mexican Dream', nutrition: { calories: '470 kcal', protein: '20g', carbs: '38g', fat: '26g', fiber: '11g' } },
+      'amore-mio': { image: '/images/amore-mio.webp', name: 'Amore Mio', nutrition: { calories: '420 kcal', protein: '18g', carbs: '42g', fat: '22g', fiber: '8g' } },
+      'buffalo-bill': { image: '/images/ave-cesar.webp', name: 'Buffalo Bill', nutrition: { calories: '520 kcal', protein: '24g', carbs: '28g', fat: '32g', fiber: '5g' } },
+      'veggie-madness': { image: '/images/amore-mio.webp', name: 'Veggie Madness', nutrition: { calories: '390 kcal', protein: '16g', carbs: '34g', fat: '22g', fiber: '12g' } },
+      'french-riviera': { image: '/images/ave-cesar.webp', name: 'French Riviera', nutrition: { calories: '460 kcal', protein: '26g', carbs: '32g', fat: '24g', fiber: '4g' } },
+      'habibi-yallah': { image: '/images/amore-mio.webp', name: 'Habibi Yallah', nutrition: { calories: '440 kcal', protein: '12g', carbs: '48g', fat: '20g', fiber: '10g' } },
+      'dolce-vita': { image: '/images/amore-mio.webp', name: 'Dolce Vita', nutrition: { calories: '280 kcal', protein: '10g', carbs: '28g', fat: '14g', fiber: '5g' } },
+      'oriental-garden': { image: '/images/amore-mio.webp', name: 'Oriental Garden', nutrition: { calories: '260 kcal', protein: '9g', carbs: '30g', fat: '12g', fiber: '6g' } },
+      'baby-crispy': { image: '/images/big-crispy.webp', name: 'Baby Crispy', nutrition: { calories: '220 kcal', protein: '14g', carbs: '18g', fat: '10g', fiber: '4g' } }
+    };
+
+    function openSaladCard(saladId, price) {
+      var data = SALAD_DATA[saladId];
+      if (!data) return;
+      var sheet = document.getElementById('salad-sheet');
+      var backdrop = document.getElementById('salad-sheet-backdrop');
+      var imgEl = document.getElementById('salad-sheet-image');
+      var titleEl = document.getElementById('salad-sheet-title');
+      var priceEl = document.getElementById('salad-sheet-price');
+      var nutritionEl = document.getElementById('salad-sheet-nutrition');
+      var orderEl = document.getElementById('salad-sheet-order');
+      if (!sheet || !backdrop || !imgEl || !titleEl || !priceEl || !nutritionEl || !orderEl) return;
+      imgEl.src = data.image;
+      imgEl.alt = data.name;
+      titleEl.textContent = data.name;
+      priceEl.textContent = price + '\u20AC';
+      nutritionEl.innerHTML = [
+        '<div class="flex justify-between"><span>Calories</span><span>' + data.nutrition.calories + '</span></div>',
+        '<div class="flex justify-between"><span>Protein</span><span>' + data.nutrition.protein + '</span></div>',
+        '<div class="flex justify-between"><span>Carbs</span><span>' + data.nutrition.carbs + '</span></div>',
+        '<div class="flex justify-between"><span>Fat</span><span>' + data.nutrition.fat + '</span></div>',
+        '<div class="flex justify-between"><span>Fiber</span><span>' + data.nutrition.fiber + '</span></div>'
+      ].join('');
+      backdrop.style.visibility = 'visible';
+      backdrop.style.opacity = '1';
+      backdrop.setAttribute('aria-hidden', 'false');
+      sheet.style.bottom = '0';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeSaladCard() {
+      var sheet = document.getElementById('salad-sheet');
+      var backdrop = document.getElementById('salad-sheet-backdrop');
+      if (!sheet || !backdrop) return;
+      backdrop.style.visibility = 'hidden';
+      backdrop.style.opacity = '0';
+      backdrop.setAttribute('aria-hidden', 'true');
+      sheet.style.bottom = '-100vh';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.salad-name-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = this.getAttribute('data-salad-id');
+        var price = this.getAttribute('data-price');
+        if (id && price) openSaladCard(id, price);
+      });
+    });
+    var saladBackdrop = document.getElementById('salad-sheet-backdrop');
+    var saladSheetClose = document.getElementById('salad-sheet-close');
+    if (saladBackdrop) saladBackdrop.addEventListener('click', closeSaladCard);
+    if (saladSheetClose) saladSheetClose.addEventListener('click', closeSaladCard);
+
+    function switchMenuTab(tabName) {
+      document.querySelectorAll('.menu-tab').forEach(function(t) {
+        t.classList.toggle('active', t.getAttribute('data-tab') === tabName);
+      });
+      document.querySelectorAll('.menu-panel').forEach(function(p) {
+        p.classList.toggle('active', p.id === 'panel-' + tabName);
+      });
+    }
+
+    function switchLocation(btn) {
+      document.querySelectorAll('.location-chip').forEach(function(c) {
+        c.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+
+    function toggleNutrition(btn) {
+      var panel = btn.closest('.nutrition-panel') || btn.closest('.salad-card').querySelector('.nutrition-panel');
+      if (!panel) return;
+      panel.classList.toggle('translate-y-full');
+      panel.classList.toggle('translate-y-0');
+    }
+
+    (function() {
+      var burger = document.getElementById('burger-btn');
+      var mobileNav = document.getElementById('mobile-nav');
+      var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      var langDisplay = document.getElementById('lang-display');
+      var langDisplayMob = document.getElementById('lang-display-mob');
+      var langToggle = document.getElementById('lang-toggle');
+
+      if (burger && mobileNav) {
+        burger.addEventListener('click', function() {
+          var isOpen = mobileNav.classList.contains('open');
+          mobileNav.classList.toggle('open', !isOpen);
+          burger.classList.toggle('open', !isOpen);
+          burger.setAttribute('aria-expanded', !isOpen);
+          document.body.style.overflow = isOpen ? '' : 'hidden';
+        });
+        mobileLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileNav.classList.remove('open');
+            burger.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      var lang = (function() {
+        try { return localStorage.getItem('lang') || 'en'; } catch (e) { return 'en'; }
+      })();
+      function setLang(l) {
+        lang = l;
+        try { localStorage.setItem('lang', l); } catch (e) {}
+        if (langDisplay) langDisplay.textContent = l.toUpperCase();
+        if (langDisplayMob) langDisplayMob.textContent = l.toUpperCase();
+      }
+      setLang(lang);
+      if (langToggle) {
+        langToggle.addEventListener('click', function() {
+          setLang(lang === 'en' ? 'fr' : 'en');
+        });
+      }
+    })();
+
+  </script>
+</body>
+</html>
