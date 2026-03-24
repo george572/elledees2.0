@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* shadcn-style tokens (SaladCard utilities: bg-card, text-foreground, etc.) */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+  }
+}
+
 @font-face {
   font-family: Cardinal;
   src: url('/fonts/VCCardinal-ExtraBold-Trial.otf') format('opentype');
@@ -157,3 +180,33 @@
 /* Scrollbar hide */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* /order — nutrition dropdown (grid row animation) */
+.nutrition-collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+.nutrition-collapsible.is-open {
+  grid-template-rows: 1fr;
+}
+.nutrition-collapsible > .nutrition-collapsible-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* /order — horizontal snap (display:flex only via Tailwind on each track so hidden/md:flex works) */
+.order-snap-track {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+/* ~3rem of the next slide stays visible as a scroll hint */
+.order-snap-track > .order-snap-page {
+  flex: 0 0 calc(100% - 3rem);
+  width: calc(100% - 3rem);
+  min-width: calc(100% - 3rem);
+  align-self: stretch;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  box-sizing: border-box;
+}

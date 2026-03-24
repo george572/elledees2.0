@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link href="/css/output.css" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-ed-beige font-geomanist-bold">
+  <div class="min-h-screen flex flex-col items-center justify-center px-3 sm:px-6 py-6 md:py-10">
+    <a href="/" class="self-start md:self-center mb-4 md:mb-5 text-ed-green text-[12px] uppercase tracking-[0.2em] hover:text-ed-red transition-colors">← Home</a>
+
+    <div class="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-xl p-4 max-[399px]:px-3 sm:p-8 md:p-10 lg:p-12 flex flex-col gap-4 md:gap-5 min-h-[min(480px,72vh)] max-h-[min(920px,94vh)]">
+      <div class="text-center flex-shrink-0">
+        <span class="font-geomanist-bold uppercase text-ed-red text-[11px] md:text-[13px] tracking-[0.25em]">Click &amp; Collect</span>
+        <h1 class="font-cardinal text-ed-red text-[32px] sm:text-[40px] md:text-[48px] lg:text-[52px] leading-tight mt-1 md:mt-2">Choose your salad</h1>
+      </div>
+
+      <div class="w-full min-w-0 flex-1 flex flex-col min-h-0">
+        <div class="flex w-full min-w-0 min-h-0 flex-1 flex-row items-stretch min-[400px]:gap-3 sm:gap-4 md:gap-5">
+          <div class="hidden min-[400px]:flex w-12 sm:w-14 md:w-16 flex-shrink-0 items-center justify-center self-center py-2">
+            <button
+              type="button"
+              class="order-scroll-prev flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border-2 border-ed-green/25 bg-white text-ed-green shadow-lg transition-all hover:border-ed-green/40 hover:bg-ed-beige disabled:pointer-events-none disabled:opacity-30 md:h-12 md:w-12"
+              aria-label="Previous salads"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+          </div>
+
+          <div id="order-carousel" class="relative flex min-h-0 min-w-0 h-full w-full flex-1 flex-col">
+            <button
+              type="button"
+              class="order-scroll-prev absolute left-0 top-1/2 z-20 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-ed-green/25 bg-white/95 text-ed-green shadow-md backdrop-blur-sm transition-all hover:border-ed-green/40 hover:bg-ed-beige max-[399px]:flex min-[400px]:hidden disabled:pointer-events-none disabled:opacity-30"
+              aria-label="Previous salads"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <button
+              type="button"
+              class="order-scroll-next absolute right-0 top-1/2 z-20 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border-2 border-ed-green/25 bg-white/95 text-ed-green shadow-md backdrop-blur-sm transition-all hover:border-ed-green/40 hover:bg-ed-beige max-[399px]:flex min-[400px]:hidden disabled:pointer-events-none disabled:opacity-30"
+              aria-label="Next salads"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+            <div
+              id="order-snap-track-mobile"
+              class="order-snap-track flex flex-row flex-nowrap h-full min-h-0 min-w-0 w-full flex-1 gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-2xl border border-ed-dark/5 py-2 scrollbar-hide md:hidden"
+              tabindex="0"
+              role="region"
+              aria-label="Salads, one per slide on small screens"
+            >
+              <% saladPagesMobile.forEach(function(page) { %>
+                <div class="order-snap-page flex h-full min-h-0 w-full items-center justify-center overflow-y-auto scrollbar-hide px-2 py-2 sm:px-3">
+                  <div class="w-full min-w-0 max-w-full">
+                    <%- include('partials/order-salad-card', { s: page[0] }) %>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+
+            <div
+              id="order-snap-track-desktop"
+              class="order-snap-track hidden h-full min-h-0 min-w-0 w-full flex-1 flex-row flex-nowrap gap-3 overflow-x-auto overflow-y-hidden overscroll-x-contain rounded-2xl border border-ed-dark/5 py-2 scrollbar-hide md:flex md:rounded-3xl md:py-3"
+              tabindex="0"
+              role="region"
+              aria-label="Salads, two per slide on larger screens"
+            >
+              <% saladPagesDesktop.forEach(function(page) { %>
+                <div class="order-snap-page flex h-full min-h-0 w-full items-center justify-start overflow-x-auto overflow-y-auto scrollbar-hide px-4 py-3 sm:px-6 sm:py-4 md:px-8 md:py-5">
+                  <div class="flex max-w-full flex-row flex-nowrap items-start justify-start gap-4 sm:gap-5 md:gap-6">
+                    <% page.forEach(function(s) { %>
+                      <%- include('partials/order-salad-card', { s: s }) %>
+                    <% }); %>
+                  </div>
+                </div>
+              <% }); %>
+            </div>
+          </div>
+
+          <div class="hidden min-[400px]:flex w-12 sm:w-14 md:w-16 flex-shrink-0 items-center justify-center self-center py-2">
+            <button
+              type="button"
+              class="order-scroll-next flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border-2 border-ed-green/25 bg-white text-ed-green shadow-lg transition-all hover:border-ed-green/40 hover:bg-ed-beige disabled:pointer-events-none disabled:opacity-30 md:h-12 md:w-12"
+              aria-label="Next salads"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var mq = window.matchMedia('(min-width: 768px)');
+      var mobile = document.getElementById('order-snap-track-mobile');
+      var desktop = document.getElementById('order-snap-track-desktop');
+      var carousel = document.getElementById('order-carousel');
+      var prevBtns = document.querySelectorAll('.order-scroll-prev');
+      var nextBtns = document.querySelectorAll('.order-scroll-next');
+      if (!mobile || !desktop || prevBtns.length === 0 || nextBtns.length === 0) return;
+
+      function activeTrack() {
+        return mq.matches ? desktop : mobile;
+      }
+
+      /** One snap step: slide width + flex gap (peek of next slide stays visible). */
+      function snapStep(track) {
+        var slides = track.querySelectorAll('.order-snap-page');
+        if (slides.length < 2) {
+          return slides[0] ? slides[0].getBoundingClientRect().width : track.clientWidth;
+        }
+        var r0 = slides[0].getBoundingClientRect();
+        var r1 = slides[1].getBoundingClientRect();
+        return r1.left - r0.left;
+      }
+
+      function setPrevDisabled(v) {
+        prevBtns.forEach(function (b) {
+          b.disabled = v;
+        });
+      }
+      function setNextDisabled(v) {
+        nextBtns.forEach(function (b) {
+          b.disabled = v;
+        });
+      }
+
+      function updateArrows() {
+        var track = activeTrack();
+        var max = track.scrollWidth - track.clientWidth;
+        var tol = 4;
+        var atStart = track.scrollLeft <= tol;
+        var atEnd = track.scrollLeft >= max - tol;
+        setPrevDisabled(atStart);
+        setNextDisabled(atEnd || max <= tol);
+      }
+
+      function scrollPrev() {
+        var track = activeTrack();
+        track.scrollBy({ left: -snapStep(track), behavior: 'smooth' });
+      }
+      function scrollNext() {
+        var track = activeTrack();
+        track.scrollBy({ left: snapStep(track), behavior: 'smooth' });
+      }
+      prevBtns.forEach(function (btn) {
+        btn.addEventListener('click', scrollPrev);
+      });
+      nextBtns.forEach(function (btn) {
+        btn.addEventListener('click', scrollNext);
+      });
+      mobile.addEventListener('scroll', updateArrows, { passive: true });
+      desktop.addEventListener('scroll', updateArrows, { passive: true });
+      window.addEventListener('resize', updateArrows);
+      if (typeof mq.addEventListener === 'function') {
+        mq.addEventListener('change', updateArrows);
+      } else if (typeof mq.addListener === 'function') {
+        mq.addListener(updateArrows);
+      }
+      if (typeof ResizeObserver !== 'undefined') {
+        new ResizeObserver(updateArrows).observe(mobile);
+        new ResizeObserver(updateArrows).observe(desktop);
+      }
+      updateArrows();
+
+      if (carousel) {
+        carousel.addEventListener('click', function (e) {
+          var btn = e.target.closest('.nutrition-toggle');
+          if (!btn || !carousel.contains(btn)) return;
+          var panel = btn.nextElementSibling;
+          if (!panel || !panel.classList.contains('nutrition-collapsible')) return;
+          var open = panel.classList.toggle('is-open');
+          btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+          var chev = btn.querySelector('.nutrition-chevron');
+          if (chev) chev.classList.toggle('rotate-180', open);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
