@@ -33,3 +33,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Bedigames
+
+The Bedigames.com landing app lives in [`bedigames/`](./bedigames). Run `cd bedigames && npm install && npm run dev`.
