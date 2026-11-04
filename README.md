@@ -33,3 +33,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## Bedigames
+
+The Bedigames.com site (live design) lives in [`bedigames/`](./bedigames). Run `cd bedigames && python3 -m http.server 5180` then open http://127.0.0.1:5180/
