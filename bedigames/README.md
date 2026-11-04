@@ -1,23 +1,12 @@
-# Bedigames
+# Bedigames.com
 
-Dark velvet landing site for [Bedigames.com](https://bedigames.com) — a slot game provider studio.
+Static landing synced with the live Bedigames.com design.
 
-## Stack
-
-Vite + Vue 3 + Vue Router
-
-## Develop
+## Local preview
 
 ```bash
-npm install
-npm run dev
+cd bedigames
+python3 -m http.server 5180
 ```
 
-## Build
-
-```bash
-npm run build
-npm run preview
-```
-
-Demo access is request-only via the contact form.
+Open http://127.0.0.1:5180/
