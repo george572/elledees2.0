@@ -17,8 +17,8 @@
         where atmosphere, rhythm, and reward feel intentional.
       </p>
       <div class="cta-group">
-        <a class="cta" href="#game">Explore our game</a>
-        <a class="cta-ghost" href="#contact">Talk with us</a>
+        <a class="cta" href="#game">See what’s new</a>
+        <a class="cta-ghost" href="#contact">Request a demo</a>
       </div>
     </div>
   </section>

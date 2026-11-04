@@ -41,9 +41,9 @@ onUnmounted(() => {
 
       <nav id="site-nav" class="nav" :class="{ open }">
         <a class="nav-link" href="#story" @click="close">About</a>
-        <a class="nav-link" href="#game" @click="close">Game</a>
+        <a class="nav-link" href="#game" @click="close">What’s new</a>
         <a class="nav-link" href="#contact" @click="close">Contact</a>
-        <a class="nav-link nav-cta" href="#contact" @click="close">Get in touch</a>
+        <a class="nav-link nav-cta" href="#contact" @click="close">Request a demo</a>
       </nav>
     </div>
   </header>

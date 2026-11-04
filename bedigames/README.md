@@ -20,4 +20,4 @@ npm run build
 npm run preview
 ```
 
-Exclusive demo game: `/game/` (Lucky Spin).
+Demo access is request-only via the contact form.
