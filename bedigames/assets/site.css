@@ -51,7 +51,7 @@
   .wrap{width:100%;max-width:var(--max);margin:0 auto;padding-left:max(var(--gutter),env(safe-area-inset-left));padding-right:max(var(--gutter),env(safe-area-inset-right))}
   section{position:relative;scroll-margin-top:84px;isolation:isolate}
 
-  /* velvet glows — soft circles that set the mood */
+  /* velvet glows: soft circles that set the mood */
   .glow{position:absolute;z-index:-1;pointer-events:none;border-radius:50%;
     width:var(--s,900px);height:var(--s,900px);left:var(--x,50%);top:var(--y,50%);transform:translate(-50%,-50%);
     background:radial-gradient(closest-side,rgba(var(--c,var(--velvet-glow)),var(--o,.42)),rgba(var(--c,var(--velvet-glow)),0))}
